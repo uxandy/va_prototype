@@ -1,0 +1,18 @@
+// Main Imports
+@import "core/vars";
+@import "core/render";
+@import "core/nav";
+@import "core/constants/colors";
+@import "core/constants/lato";
+
+//Import libs here?
+@import "core/libs";
+
+// Set Global Font Size and Font Face.
+html {
+  height: 100%;
+  font-size: $global-font-size;
+  body{
+  	font-family: Lato-400;
+  }
+}

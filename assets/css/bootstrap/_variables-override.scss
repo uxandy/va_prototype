@@ -1,0 +1,10 @@
+// Needed for container calculation
+$grid-gutter-width:         30px;
+// Changing base size to 16px;
+$font-size-base:          16px;
+// Change Desktop resolution to 1400px.
+$container-large-desktop:      (1400px + $grid-gutter-width);
+// Fix radii to be 3px across all sizes.
+$border-radius-base:        3px;
+$border-radius-large:       3px;
+$border-radius-small:       3px;

@@ -1,0 +1,46 @@
+// Lenovo Brand Colors
+$lenovo-red: #e2231a;
+$lenovo-orange: #ff6a00;
+$lenovo-pink: #e96baf;
+$lenovo-blue: #3e8ddd;
+$lenovo-cyan: #4ac0e0;
+$lenovo-green: #6abf4a;
+$lenovo-dark-gray: #6f7170;
+$lenovo-gray: #c4beb6;
+$lenovo-light-gray: #d9d8d6;
+$lenovo-black: #000;
+$lenovo-white: #fff;
+
+
+// Lenovo Color Banks
+$color-text: $lenovo-black;
+$color-link: $lenovo-blue;
+$color-success: $lenovo-green;
+$color-warning: $lenovo-orange;
+$color-error: $lenovo-red;
+$color-shading-light: $lenovo-light-gray;
+$color-shading-med: $lenovo-gray;
+$color-shading-dark: $lenovo-dark-gray;
+
+$btn-color-text: $lenovo-blue;
+$btn-color-link: $lenovo-blue;
+$btn-color-success: $lenovo-green;
+$btn-color-warning: $lenovo-orange;
+$btn-color-error: $lenovo-red;
+$btn-color-shading-light: $lenovo-light-gray;
+$btn-color-shading-med: $lenovo-gray;
+$btn-color-shading-dark: $lenovo-dark-gray;
+
+@mixin bg-color($color-name) {
+	background: $color-name;
+}
+
+btn-color {
+
+  @at-root {
+    .#{&}-text { @include bg-color($color-warning); }
+    .#{&}-link { @include bg-color($color-warning); }
+    .#{&}-warning { @include bg-color($color-warning); }
+  }
+
+}

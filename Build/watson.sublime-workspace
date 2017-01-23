@@ -1,0 +1,342 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"co",
+				"cover"
+			],
+			[
+				"trans",
+				"translateY()"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "includes/_footer.html",
+			"settings":
+			{
+				"buffer_size": 16,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 227.0,
+		"last_filter": "indent",
+		"selected_items":
+		[
+			[
+				"indent",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"re",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"beaut",
+				"HTMLBeautify"
+			],
+			[
+				"scss",
+				"Set Syntax: SCSS"
+			],
+			[
+				"beat",
+				"HTMLBeautify"
+			],
+			[
+				"bea",
+				"HTMLBeautify"
+			],
+			[
+				"color",
+				"Color Picker: Insert Color"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"pytho",
+				"Set Syntax: Python"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"jso",
+				"Set Syntax: JSON"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/ShazMac/Documents/Coding Space/Watson",
+		"/Users/ShazMac/Documents/Coding Space/Watson/assets",
+		"/Users/ShazMac/Documents/Coding Space/Watson/includes"
+	],
+	"file_history":
+	[
+		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/assets/css/bootstrap/_variables-override.scss",
+		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/assets/css/core/_vars.scss",
+		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/assets/css/core/constants/_lato.scss",
+		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/assets/css/core/_libs.scss",
+		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/assets/css/core/_nav.scss",
+		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/assets/css/_bootstrap.scss",
+		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/assets/css/bootstrap/_variables.scss",
+		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/assets/css/core/constants/_colors.scss",
+		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/assets/css/_debug.scss",
+		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/assets/css/style.scss",
+		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/assets/css/core.scss",
+		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/includes/_content-forms.html",
+		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/includes/_content-tables.html",
+		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/includes/_content-lists.html",
+		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/includes/_content-paragraph.html",
+		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/includes/_content-headers.html",
+		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/includes/_content-buttons.html",
+		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/includes/_content-color.html",
+		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/includes/_content-grid.html",
+		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/includes/_nav.html",
+		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/includes/_header.html",
+		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/index.html",
+		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/lenovostyle.sublime-project",
+		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/assets/css/components/_colors.scss",
+		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/assets/css/core/_render.scss",
+		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/includes/_footer.html",
+		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/Build/index.html",
+		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/hammer.json",
+		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/assets/stylesheets/styles.sass",
+		"/Users/ShazMac/Documents/Coding Space/Repositories/Lenovo/src/Lenovo.eService.Website/app/pages/global/home/banner.cshtml",
+		"/Users/ShazMac/Documents/Coding Space/basics/01-intro/start/js/main.js",
+		"/Users/ShazMac/Documents/Coding Space/basics/05-simple-parallax/end/js/main.js",
+		"/Users/ShazMac/Documents/Design Space/Counties.txt",
+		"/Users/ShazMac/Documents/Coding Space/basics/01-intro/start/index.html",
+		"/Users/ShazMac/Documents/Coding Space/basics/01-intro/start/css/main.css",
+		"/Users/ShazMac/Library/Application Support/Sublime Text 3/Packages/User/SublimeServer.sublime-settings",
+		"/Users/ShazMac/Documents/Coding Space/basics/01-intro/start/favicon.ico",
+		"/Users/ShazMac/Desktop/jsondump.html",
+		"/Users/ShazMac/Desktop/letstrythat.json",
+		"/Users/ShazMac/Documents/Design Space/Python/hello_world.py",
+		"/Users/ShazMac/Downloads/cr-93e0m/CORE.NFO",
+		"/Users/ShazMac/Desktop/andy.json",
+		"/Users/ShazMac/Downloads/font-bundles-master/README.md",
+		"/Users/ShazMac/Downloads/font-bundles-master/bundle/FontAwesome.json",
+		"/private/etc/vpnc/vpnc-script.sh",
+		"/Users/ShazMac/Desktop/vpnc-script.sh"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/assets/css/bootstrap"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"font-size-base",
+			"btn",
+			"border-radius",
+			"fonts/",
+			"container",
+			"col",
+			"1170",
+			"background",
+			"    ",
+			"Top of Page"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"../assets/fonts/lato/",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "includes/_footer.html",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 16,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 134.0
+	},
+	"pinned_build_system": "",
+	"project": "watson.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 194.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
