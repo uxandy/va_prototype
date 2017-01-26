@@ -1,0 +1,49 @@
+// SIDEBAR SCSS
+@import "core";
+@import "components/conversation";
+// @import "components/conversation-alt";
+
+section.chat-header {
+	background: rgba(255,255,255,0.9);
+	width:100%;
+	position: fixed;
+	border-bottom:1px solid #C4BEB6;
+	height: 60px;
+
+	z-index: 10;
+
+
+	.logo {
+		display: inline-block;
+		left: 0;
+		img {
+			width: 40px;
+			margin-top: 4px;
+			margin-left:10px;
+		}
+		span.logo-label {
+			position: relative;
+			top: 5px;
+			display: inline-block;
+		}
+	}
+
+	.user-bar {
+		display: inline-block;
+		right:0;
+		float: right;
+		ul {
+			li {
+				list-style: none;
+				display: inline-block;
+				span.glyphicon {
+					font-size: 24px;
+				}
+				&.user-profile, &.user-settings {
+					padding:15px;
+					box-sizing:border-box;
+				}
+			}
+		}
+	}
+}
