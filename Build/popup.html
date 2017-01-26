@@ -1,9 +1,137 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>I AM A TITLE</title>
-	</head>
-	<body>
-		I AM BANANA
-	</body>
-</html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                window.onbeforeunload = function() { ws = null }
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link');
+                    for (var i = 0; i < links.length;i++) {
+                    var link = links[i];
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) {
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,'');
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+  
+  <link rel='stylesheet' href='assets/css/normalize.css'>
+<link rel='stylesheet' href='assets/css/style.css'>
+  <link rel='stylesheet' href='assets/css/bootstrap-style.css'>
+  <link rel='stylesheet' href='assets/css/popup.css'>
+  <script src='assets/js/jquery-1.8.3.min.js'></script>
+<script src='assets/js/app.js'></script>
+  
+  <link href="assets/favicon.ico" rel="shortcut icon">
+  <link href="assets/apple-touch-icon.png" rel="apple-touch-icon">
+  
+  <title>CHAT WINDOW</title>
+  
+</head>
+
+<body>
+
+  <!-- <header> -->
+    <!-- <@>include _nav -->
+  <!-- </header> -->
+
+<section class="chat-header">
+	<!-- CHAT HEADER -->
+	<div class="logo">
+		<img src="assets/img/logo.svg" alt="">
+		<span class="logo-label"> Virtual Assistant</span>
+	</div>
+	<div class="user-bar">
+		<ul>
+			<a href="#"><li class="user-profile"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></li></a>
+			<a href="#"><li class="user-settings"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></li></a>
+		</ul>
+	</div>
+</section>
+
+<section class="chat-body">
+	<!-- CHAT BODY -->
+
+<div class="right">
+
+	<div class="chat active-chat" data-chat="person2">
+		<div class="conversation-start">
+			<span>Today, 5:38 PM</span>
+		</div>
+		<div class="bubble you">
+			Hello, can you hear me?
+		</div>
+		<div class="bubble you">
+			I'm in California dreaming
+		</div>
+		<div class="bubble me">
+			... about who we used to be.
+		</div>
+		<div class="bubble me">
+			Are you serious?
+		</div>
+		<div class="bubble you">
+			When we were younger and free...
+		</div>
+		<div class="bubble you">
+			I've forgotten how it felt before
+		</div>
+		<div class="bubble you">
+			Hello, can you hear me?
+		</div>
+		<div class="bubble you">
+			I'm in California dreaming
+		</div>
+		<div class="bubble me">
+			... about who we used to be.
+		</div>
+		<div class="bubble me">
+			Are you serious?
+		</div>
+		<div class="bubble you">
+			When we were younger and free...
+		</div>
+		<div class="bubble you">
+			I've forgotten how it felt before
+		</div>
+
+	</div>
+
+	<div class="chat-input">
+		<div class="write">
+		    <a href="javascript:;" class="write-link attach"></a>
+		    <input type="text">
+		    <a href="javascript:;" class="write-link smiley"></a>
+		    <a href="javascript:;" class="write-link send"></a>
+	    </div>
+	</div>
+
+
+
+</div>
+
+<script>
+$('.chat').scrollTop($('.chat')[0].scrollHeight);
+</script>
+</section>
+
+
+<section class="chat-input">
+	
+</section>
