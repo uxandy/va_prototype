@@ -38,10 +38,11 @@ $dark: #555;
     position: relative;
     display: inline-block;
     clear: both;
-    margin-bottom: 8px;
+    margin-bottom: 15px;
     padding: 13px 14px;
     vertical-align: top;
     border-radius: 5px;
+    box-shadow: 0 2px 4px -2px rgba(0,0,0,0.4);
     &:before {
         position: absolute;
         top: 19px;
@@ -51,26 +52,69 @@ $dark: #555;
         content: '\00a0';
         transform: rotate(29deg) skew(-35deg);
     }
+    &:last-child {
+        margin-bottom: 25px;
+    }
     &.you {
         float: left;
-        color: $white;
-        background-color: $blue;
+        color: $dark;
+        background-color: #fff;
         align-self: flex-start;
+        max-width: 90%;
         // @include animation-name(slideFromLeft);
         &:before {
             left: -3px;
-            background-color: $blue;
+            background-color: #fff;
         }
     }
     &.me {
         float: right;
-        color: $dark;
-        background-color: #eceff1;
+        color: $white;
+        background-color: $blue;
         align-self: flex-end;
+        max-width: 90%;
         // @include animation-name(slideFromRight);
         &:before {
             right: -3px;
-            background-color: #eceff1;
+            background-color: $blue;
+        }
+    }
+
+
+    .input-controls {
+        border-top:1px solid #d0d0d0;
+        margin-top: 10px;
+
+        span {
+            font-weight: 700;
+            display: inline-block;
+            width:100%;
+            padding-top:10px;
+        }
+        ul {
+            margin:0;
+            padding: 0;
+            // padding-top:5px;
+            padding: 5px 0;
+            li {
+                // list-style: none;
+                // border:1px solid $blue;
+                // border-radius: 4px;
+                // margin-top:10px;
+                // padding:8px;
+
+                background: #f5f5f5 none repeat scroll 0 0;
+                border: medium none;
+                border-radius: 4px;
+                box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.52);
+                list-style: outside none none;
+                margin-top: 10px;
+                padding: 8px 12px;
+
+                &:hover {
+                    background: #fafafa;
+                }
+            }
         }
     }
 }
@@ -97,6 +141,7 @@ $dark: #555;
 
     height: 694px;
     margin-bottom: -8px;
+    background: #f0f0f0;
     &.active-chat {
         // display: block;
         // display: flex;
@@ -114,14 +159,14 @@ $dark: #555;
 
 
 .write {
-    background-color: #eceff1;
-    border: 1px solid #999;
-    border-radius: 5px;
+    // background-color: #eceff1;
+    // border: 1px solid #999;
+    // border-radius: 5px;
     height: 42px;
     left: 30px;
-    margin: auto 20px;
+    // margin: auto 20px;
     padding-left: 8px;
-    width: 400px;
+    // width: 400px;
     input {
         font-size: 16px;
         float: left;
@@ -131,7 +176,10 @@ $dark: #555;
         color: $dark;
         border: 0;
         outline: none;
-        background-color: #eceff1;
+        margin-right: 60px;
+        // background-color: #eceff1;
+
+        background: none;
         // @include font;
     }
     .write-link {
@@ -186,5 +234,5 @@ $dark: #555;
 
 .chat-input {
     border-top: 1px solid #ccc;
-    padding-top: 20px;
+    padding-top: 5px;
 }

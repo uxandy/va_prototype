@@ -427,10 +427,11 @@ html {
   position: relative;
   display: inline-block;
   clear: both;
-  margin-bottom: 8px;
+  margin-bottom: 15px;
   padding: 13px 14px;
   vertical-align: top;
-  border-radius: 5px; }
+  border-radius: 5px;
+  box-shadow: 0 2px 4px -2px rgba(0, 0, 0, 0.4); }
   .bubble:before {
     position: absolute;
     top: 19px;
@@ -439,22 +440,48 @@ html {
     height: 6px;
     content: '\00a0';
     transform: rotate(29deg) skew(-35deg); }
+  .bubble:last-child {
+    margin-bottom: 25px; }
   .bubble.you {
     float: left;
-    color: #fff;
-    background-color: #3e8ddd;
-    align-self: flex-start; }
+    color: #555;
+    background-color: #fff;
+    align-self: flex-start;
+    max-width: 90%; }
     .bubble.you:before {
       left: -3px;
-      background-color: #3e8ddd; }
+      background-color: #fff; }
   .bubble.me {
     float: right;
-    color: #555;
-    background-color: #eceff1;
-    align-self: flex-end; }
+    color: #fff;
+    background-color: #3e8ddd;
+    align-self: flex-end;
+    max-width: 90%; }
     .bubble.me:before {
       right: -3px;
-      background-color: #eceff1; }
+      background-color: #3e8ddd; }
+  .bubble .input-controls {
+    border-top: 1px solid #d0d0d0;
+    margin-top: 10px; }
+    .bubble .input-controls span {
+      font-weight: 700;
+      display: inline-block;
+      width: 100%;
+      padding-top: 10px; }
+    .bubble .input-controls ul {
+      margin: 0;
+      padding: 0;
+      padding: 5px 0; }
+      .bubble .input-controls ul li {
+        background: #f5f5f5 none repeat scroll 0 0;
+        border: medium none;
+        border-radius: 4px;
+        box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.52);
+        list-style: outside none none;
+        margin-top: 10px;
+        padding: 8px 12px; }
+        .bubble .input-controls ul li:hover {
+          background: #fafafa; }
 
 .chat {
   position: relative;
@@ -466,19 +493,15 @@ html {
   padding: 80px 20px 40px;
   width: 100%;
   height: 694px;
-  margin-bottom: -8px; }
+  margin-bottom: -8px;
+  background: #f0f0f0; }
   .chat.active-chat {
     display: inline-block; }
 
 .write {
-  background-color: #eceff1;
-  border: 1px solid #999;
-  border-radius: 5px;
   height: 42px;
   left: 30px;
-  margin: auto 20px;
-  padding-left: 8px;
-  width: 400px; }
+  padding-left: 8px; }
   .write input {
     font-size: 16px;
     float: left;
@@ -488,7 +511,8 @@ html {
     color: #555;
     border: 0;
     outline: none;
-    background-color: #eceff1; }
+    margin-right: 60px;
+    background: none; }
   .write .write-link.attach:before {
     display: inline-block;
     float: left;
@@ -526,7 +550,7 @@ html {
 
 .chat-input {
   border-top: 1px solid #ccc;
-  padding-top: 20px; }
+  padding-top: 5px; }
 
 section.chat-header {
   background: rgba(255, 255, 255, 0.9);
