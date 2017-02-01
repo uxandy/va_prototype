@@ -1,15 +1,13 @@
-<!-- CHAT BODY -->
-
 <div class="right">
 
-	<div class="chat active-chat" data-chat="person2">
+	<div class="chat active-chat">
 		<div class="conversation-start">
 			<span>Today, 5:38 PM</span>
 		</div>
 		<div class="bubble you">
-			Hello, can you hear me?
+			Hello, this is a watson api test... ask me something
 		</div>
-		<div class="bubble you">
+<!-- 		<div class="bubble you">
 			I'm in California dreaming
 		</div>
 		<div class="bubble me">
@@ -55,7 +53,7 @@
 						<li>Something else is wrong and I need help with that now.</li>
 					</a>
 				</ul>
-			</div>
+			</div> -->
 
 		</div>
 
@@ -64,7 +62,7 @@
 	<div class="chat-input">
 		<div class="write">
 		    <!-- <a href="javascript:;" class="write-link attach"></a> -->
-		    <input type="text" placeholder="Type here to chat with the virtual agent...">
+		    <input id="chatbox" type="text" placeholder="Type here to chat with the virtual agent...">
 		    <a href="javascript:;" class="write-link smiley"></a>
 		    <a href="javascript:;" class="write-link send"></a>
 	    </div>
@@ -81,4 +79,4 @@ $('.chat').scrollTop($('.chat')[0].scrollHeight);
 
  <!-- Character limit, big text area, big bubble for the main input box, start with 3 rows. 
  - Investigate adding a character limit indicator. Or limit but don't tell the user.
-  -->
+ 

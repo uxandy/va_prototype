@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"list-s",
+				"list-style"
+			],
+			[
 				"co",
 				"cover"
 			],
@@ -16,10 +20,112 @@
 	"buffers":
 	[
 		{
-			"file": "includes/_footer.html",
+			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 16,
+				"buffer_size": 82,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "popup.html",
+			"settings":
+			{
+				"buffer_size": 220,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "includes/_sidebar.html",
+			"settings":
+			{
+				"buffer_size": 901,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "includes/_chat-header.html",
+			"settings":
+			{
+				"buffer_size": 419,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "includes/_chat-body.html",
+			"settings":
+			{
+				"buffer_size": 1970,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/css/style.scss",
+			"settings":
+			{
+				"buffer_size": 562,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/css/components/_sidebar-flap.scss",
+			"settings":
+			{
+				"buffer_size": 1452,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/css/core/constants/_colors.scss",
+			"settings":
+			{
+				"buffer_size": 1122,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/css/components/_home.scss",
+			"settings":
+			{
+				"buffer_size": 20,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/css/popup.scss",
+			"settings":
+			{
+				"buffer_size": 751,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "\n\n.conversation-start {\n    position: relative;\n    width: 100%;\n    margin-bottom: 27px;\n    text-align: center;\n    span {\n        font-size: 14px;\n        display: inline-block;\n        color: #555;\n        &:before,&:after {\n            position: absolute;\n            top: 10px;\n            display: inline-block;\n            width: 30%;\n            height: 1px;\n            content: '';\n            background-color: #555;\n        }\n        &:before {\n            left: 0;\n        }\n        &:after {\n            right: 0;\n        }\n    }\n}\n\n$blue: $lenovo-blue;\n$white: #fff;\n$light: #999;\n$dark: #555;\n\n\n.bubble {\n    font-size: 16px;\n    position: relative;\n    display: inline-block;\n    clear: both;\n    margin-bottom: 15px;\n    padding: 13px 14px;\n    vertical-align: top;\n    border-radius: 5px;\n    box-shadow: 0 2px 4px -2px rgba(0,0,0,0.4);\n    &:before {\n        position: absolute;\n        top: 19px;\n        display: block;\n        width: 8px;\n        height: 6px;\n        content: '\\00a0';\n        transform: rotate(29deg) skew(-35deg);\n    }\n    &:last-child {\n        margin-bottom: 25px;\n    }\n    &.you {\n        float: left;\n        color: $dark;\n        background-color: #fff;\n        align-self: flex-start;\n        max-width: 90%;\n        // @include animation-name(slideFromLeft);\n        &:before {\n            left: -3px;\n            background-color: #fff;\n        }\n    }\n    &.me {\n        float: right;\n        color: $white;\n        background-color: $blue;\n        align-self: flex-end;\n        max-width: 90%;\n        // @include animation-name(slideFromRight);\n        &:before {\n            right: -3px;\n            background-color: $blue;\n        }\n    }\n\n\n    .input-controls {\n        border-top:1px solid #d0d0d0;\n        margin-top: 10px;\n\n        span {\n            font-weight: 700;\n            display: inline-block;\n            width:100%;\n            padding-top:10px;\n        }\n        ul {\n            margin:0;\n            padding: 0;\n            // padding-top:5px;\n            padding: 5px 0;\n            li {\n                // list-style: none;\n                // border:1px solid $blue;\n                // border-radius: 4px;\n                // margin-top:10px;\n                // padding:8px;\n\n                background: #f5f5f5 none repeat scroll 0 0;\n                border: medium none;\n                border-radius: 4px;\n                box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.52);\n                list-style: outside none none;\n                margin-top: 10px;\n                padding: 8px 12px;\n\n                &:hover {\n                    background: #fafafa;\n                }\n            }\n        }\n    }\n}\n\n.chat {\n    position: relative;\n    display: none;\n    // overflow: hidden;\n    overflow-y:scroll;\n    overflow-x:hidden;\n    // padding: 0 35px 92px;\n    // border-width: 1px 1px 1px 0;\n    // border-style: solid;\n    // border-color: $light;\n    border: none;\n    height: calc(100% - 48px);\n    // justify-content: flex-end;\n    // flex-direction: column;\n\n    padding: 80px 20px 40px;\n    width:100%;\n    // height: 600px;\n\n\n    height: 694px;\n    margin-bottom: -8px;\n    background: #f0f0f0;\n    &.active-chat {\n        // display: block;\n        // display: flex;\n        display: inline-block;\n        .bubble {\n            // @include transition-timing-function(cubic-bezier(.4,-.04, 1, 1));\n            @for $i from 1 through 10 {\n                &:nth-of-type(#{$i}) {\n                    // @include animation-duration(.15s *$i);\n                }\n            }\n        }\n    }\n}\n\n\n.write {\n    // background-color: #eceff1;\n    // border: 1px solid #999;\n    // border-radius: 5px;\n    height: 42px;\n    left: 30px;\n    // margin: auto 20px;\n    padding-left: 8px;\n    // width: 400px;\n    input {\n        font-size: 16px;\n        float: left;\n        width: 306px;\n        height: 40px;\n        padding: 0 10px;\n        color: $dark;\n        border: 0;\n        outline: none;\n        margin-right: 60px;\n        // background-color: #eceff1;\n\n        background: none;\n        // @include font;\n    }\n    .write-link {\n        &.attach {\n            &:before {\n                display: inline-block;\n                float: left;\n                width: 20px;\n                height: 42px;\n                content: '';\n                background-image: url('http://s1.postimg.org/s5gfy283f/attachemnt.png');\n                background-repeat: no-repeat;\n                background-position: center;\n            }\n        }\n        &.smiley {\n            &:before {\n                display: inline-block;\n                float: left;\n                width: 20px;\n                height: 42px;\n                content: '';\n                background-image: url('http://s14.postimg.org/q2ug83h7h/smiley.png');\n                background-repeat: no-repeat;\n                background-position: center;\n            }\n        }\n        &.send {\n            &:before {\n                display: inline-block;\n                float: left;\n                width: 20px;\n                height: 42px;\n                margin-left: 11px;\n                content: '';\n                background-image: url('http://s30.postimg.org/nz9dho0pp/send.png');\n                background-repeat: no-repeat;\n                background-position: center;\n            }\n        }\n    }\n}\n\n\n\n.right {\n    float: right;\n    height: 100%;\n    position: relative;\n    width: 100%;\n}\n\n.chat-input {\n    border-top: 1px solid #ccc;\n    padding-top: 5px;\n}",
+			"file": "assets/css/components/_conversation.scss",
+			"file_size": 5529,
+			"file_write_time": 131299322790000000,
+			"settings":
+			{
+				"buffer_size": 5519,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/css/components/_conversation-alt.scss",
+			"settings":
+			{
+				"buffer_size": 407,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -31,33 +137,37 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 227.0,
-		"last_filter": "indent",
+		"height": 267.0,
+		"last_filter": "scss",
 		"selected_items":
 		[
 			[
-				"indent",
-				"Indentation: Reindent Lines"
-			],
-			[
-				"html",
-				"Set Syntax: HTML"
+				"scss",
+				"Set Syntax: SCSS"
 			],
 			[
 				"re",
 				"Indentation: Reindent Lines"
 			],
 			[
+				"ht",
+				"Set Syntax: HTML"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
 				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"indent",
 				"Indentation: Reindent Lines"
 			],
 			[
 				"beaut",
 				"HTMLBeautify"
-			],
-			[
-				"scss",
-				"Set Syntax: SCSS"
 			],
 			[
 				"beat",
@@ -100,7 +210,7 @@
 				"Set Syntax: JSON"
 			]
 		],
-		"width": 449.0
+		"width": 485.0
 	},
 	"console":
 	{
@@ -122,10 +232,23 @@
 	[
 		"/Users/ShazMac/Documents/Coding Space/Watson",
 		"/Users/ShazMac/Documents/Coding Space/Watson/assets",
+		"/Users/ShazMac/Documents/Coding Space/Watson/assets/css/components",
+		"/Users/ShazMac/Documents/Coding Space/Watson/assets/css/core/constants",
+		"/Users/ShazMac/Documents/Coding Space/Watson/Build",
+		"/Users/ShazMac/Documents/Coding Space/Watson/Build/assets",
+		"/Users/ShazMac/Documents/Coding Space/Watson/Build/assets/css",
 		"/Users/ShazMac/Documents/Coding Space/Watson/includes"
 	],
 	"file_history":
 	[
+		"/Users/ShazMac/Documents/Coding Space/Watson/popup.html",
+		"/Users/ShazMac/Documents/Coding Space/Watson/includes/_header.html",
+		"/Users/ShazMac/Documents/Coding Space/Watson/assets/css/core.scss",
+		"/Users/ShazMac/Documents/Coding Space/Watson/includes/_popup-header.html",
+		"/Users/ShazMac/Documents/Coding Space/Watson/assets/css/components/popup.scss",
+		"/Users/ShazMac/Documents/Coding Space/Watson/Build/assets/css/style.css",
+		"/Users/ShazMac/Documents/Coding Space/Watson/assets/css/components/_sidebar-flap.scss",
+		"/Users/ShazMac/Documents/Coding Space/Watson/assets/css/_sidebar-flap.scss",
 		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/assets/css/bootstrap/_variables-override.scss",
 		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/assets/css/core/_vars.scss",
 		"/Users/ShazMac/Documents/Coding Space/Lenovo_Style/My New Project/assets/css/core/constants/_lato.scss",
@@ -219,16 +342,44 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "includes/_footer.html",
-					"semi_transient": true,
+					"file": "index.html",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 16,
+						"buffer_size": 82,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								82,
+								82
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "popup.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 220,
 						"regions":
 						{
 						},
@@ -248,6 +399,296 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "includes/_sidebar.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 901,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								635,
+								635
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "includes/_chat-header.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 419,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								16,
+								16
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "includes/_chat-body.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1970,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1495,
+								1495
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 5,
+			"sheets":
+			[
+				{
+					"buffer": 5,
+					"file": "assets/css/style.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 562,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								177,
+								177
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "assets/css/components/_sidebar-flap.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1452,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								506,
+								507
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "assets/css/core/constants/_colors.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1122,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8,
+								8
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "assets/css/components/_home.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 20,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								20,
+								20
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "assets/css/popup.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 751,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								262,
+								262
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "assets/css/components/_conversation.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5519,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3794,
+								3794
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "assets/css/components/_conversation-alt.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 407,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								407,
+								407
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
 					"type": "text"
 				}
 			]
@@ -270,11 +711,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -334,7 +782,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 194.0,
+	"side_bar_width": 325.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

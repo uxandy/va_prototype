@@ -37,6 +37,7 @@
   <link rel='stylesheet' href='assets/css/core.css'>
   <script src='assets/js/jquery-1.8.3.min.js'></script>
 <script src='assets/js/app.js'></script>
+  <script src='assets/js/api.js'></script>
   
   <link href="assets/favicon.ico" rel="shortcut icon">
   <link href="assets/apple-touch-icon.png" rel="apple-touch-icon">
@@ -48,7 +49,33 @@
 <body>
 
   <!-- <header> -->
-    <!-- <@>include _nav -->
+    <nav>
+  <ul>
+    <li class="greeting-id"></li>
+    <li class="greeting-content"></li>
+  </ul>
+</nav>
+
+
+<section id="fetch">
+	<input type="text" placeholder="Enter a movie title" id="term" />
+	<button id="search">Find me a poster</button>
+</section>
+<section id="poster">
+</section>
+
+<style>
+
+section#poster {
+	width:700px;
+}
+
+section#poster img {
+	max-width: 100%;
+}
+
+
+</style>
   <!-- </header> -->
 
 <!-- Side bar tab -->
