@@ -59,12 +59,12 @@
 		  	// Set the context based on what was received
 		  	contextVA = result.context;
 		  	// Fetch the output text from the returned array and pass it on to resultVA
-		  	resultVA = result.output.text;
+		  	resultVA = result.output.text[1];
 
 		  	// Stringify the text and append it to element HTML
 		  	// $("#poster").html(JSON.stringify(resultVA));
 
-		  	$(".chat").append('<div class="bubble you">' + JSON.stringify(resultVA) + '</div>');
+		  	$(".chat").append('<div class="bubble you">' + resultVA + '</div>');
 		  	$('.chat').scrollTop($('.chat')[0].scrollHeight);
 
 		  },
