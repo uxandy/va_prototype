@@ -2,6 +2,8 @@
 
 	$(init);
 
+	$(parseVA);
+
 	var apiURL = "https://watson-api-explorer.mybluemix.net/conversation/api/v1/workspaces/0a0c06c1-8e31-4655-9067-58fcac5134fc/message?version=2016-09-20";
 	var dataInit = {};
 	var contextVA = {};
@@ -72,7 +74,34 @@
 		  contentType: "application/json"
 		});
 
+	}
+
+	function parseVA() {
+
+		$("va\\:textbox").each(function(){
+				alert("I'm here");
+		        $(this).replaceWith('<div><input id="' + $(this).attr("name") + '"placeholder="' + $(this).attr("prompt") + '"' + 'maxlength=' + $(this).attr("maxlength") + '></div>');
+		    }
+		);
 
 	}
 
 }) ();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
