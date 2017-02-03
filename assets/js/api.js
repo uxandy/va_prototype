@@ -11,6 +11,7 @@
 	var dataInit = {};
 	var contextVA = {};
 	var resultVA = null;
+	var uInput = null;
 
 	function init() {
 
@@ -31,10 +32,10 @@
 				var chatText = $("#chatbox").val();
 				// var userInput = {text: $("#term").val()};
 				var chatInput = {text: $("#chatbox").val()};
-				// Pass it on to the PostVA method to get a response
-				postVA(chatInput);
 				// Append input text to chat box.
 				$(".chat").append('<div class="bubble me">' + chatText + '</div>');
+				// Pass it on to the PostVA method to get a response
+				postVA(chatInput);
 				$('.chat').scrollTop($('.chat')[0].scrollHeight);
 				// Clear the text field.
 				$("#chatbox").val("");
@@ -112,7 +113,11 @@
 
 
 
-
+$( document ).ajaxStart(function() {
+  $(".chat").append('<div class="bubble you loading">' + '<span>.</span><span>.</span><span>.</span>' + '</div>');
+}).ajaxStop(function() {
+  $(".loading").remove();
+});
 
 
 
