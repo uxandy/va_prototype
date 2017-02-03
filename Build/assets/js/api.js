@@ -79,8 +79,12 @@
 	function parseVA() {
 
 		$("va\\:textbox").each(function(){
-				alert("I'm here");
-		        $(this).replaceWith('<div><input id="' + $(this).attr("name") + '"placeholder="' + $(this).attr("prompt") + '"' + 'maxlength=' + $(this).attr("maxlength") + '></div>');
+		        $(this).replaceWith('<div class="input-field"><input id="' + $(this).attr("name") + '"placeholder="' + $(this).attr("prompt") + '"' + 'maxlength=' + $(this).attr("maxlength") + '></div>');
+		    }
+		);
+
+		$("va\\:input").each(function(){
+		        $(this).replaceWith('<a href="#">' + $(this).html() + '</a>');
 		    }
 		);
 
