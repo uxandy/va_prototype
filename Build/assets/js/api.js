@@ -4,7 +4,10 @@
 
 	$(parseVA);
 
-	var apiURL = "https://watson-api-explorer.mybluemix.net/conversation/api/v1/workspaces/0a0c06c1-8e31-4655-9067-58fcac5134fc/message?version=2016-09-20";
+	// http://lenovo-tech-support.mybluemix.net/rest/conversation/api/v1/workspaces/c6ff8ad5-2df9-4be2-bcd9-6d9fb1ad6529/message
+	// var apiURL = "https://watson-api-explorer.mybluemix.net/conversation/api/v1/workspaces/0a0c06c1-8e31-4655-9067-58fcac5134fc/message?version=2016-09-20";
+	var apiURL = "http://lenovo-tech-support.mybluemix.net/rest/conversation/api/v1/workspaces/c6ff8ad5-2df9-4be2-bcd9-6d9fb1ad6529/message";
+	var dataInit = {};
 	var dataInit = {};
 	var contextVA = {};
 	var resultVA = null;
@@ -61,12 +64,13 @@
 		  	// Set the context based on what was received
 		  	contextVA = result.context;
 		  	// Fetch the output text from the returned array and pass it on to resultVA
-		  	resultVA = result.output.text[1];
+		  	resultVA = result.output.text[0];
 
 		  	// Stringify the text and append it to element HTML
 		  	// $("#poster").html(JSON.stringify(resultVA));
 
 		  	$(".chat").append('<div class="bubble you">' + resultVA + '</div>');
+		  	$(parseVA);
 		  	$('.chat').scrollTop($('.chat')[0].scrollHeight);
 
 		  },
@@ -78,13 +82,27 @@
 
 	function parseVA() {
 
+		// Parse input boxes
 		$("va\\:textbox").each(function(){
 		        $(this).replaceWith('<div class="input-field"><input id="' + $(this).attr("name") + '"placeholder="' + $(this).attr("prompt") + '"' + 'maxlength=' + $(this).attr("maxlength") + '></div>');
 		    }
 		);
 
+		// Parse simple input anchors
 		$("va\\:input").each(function(){
 		        $(this).replaceWith('<a href="#">' + $(this).html() + '</a>');
+		    }
+		);
+
+		// Parse simple link 
+		$("va\\:link").each(function(){
+		        $(this).replaceWith('<a href="' + $(this).attr("href") + '">' + $(this).html() + '</a>');
+		    }
+		);
+
+		$(".w4mvsImg").each(function(){
+				$(this).removeClass('w4mvsImg');
+		        $(this).wrap('<div class="img-wrapper"></div>');
 		    }
 		);
 
