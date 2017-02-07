@@ -101,19 +101,14 @@
 
 		// Parse simple link 
 		$("va\\:link").each(function(){
-		        $(this).replaceWith('<a href="' + $(this).attr("href") + '">' + $(this).html() + '</a>');
+		        $(this).replaceWith('<a href="' + $(this).attr("href") + '" target="_blank">' + $(this).html() + '</a>');
 		    }
 		);
 
 		$(".w4mvsImg").each(function(){
 				var src = $('.w4mvsImg').attr('src');
 				$(this).removeClass('w4mvsImg');
-
 				$(this).replaceWith('<div class="thumb1" style="background-image: url(' + src + ')"><a href="' + src + '" target="_blank"></a></div>');
-				
-				// $(this).wrap('<div class="thumb1"><a href="' + src + '"></a></div>');
-				// $('.thumb1').css('background-image', 'url(' + src + ')');
-		        // $(this).wrap('<a href="' + src + '" target="_blank" class="img-wrapper"></a>');
 		    }
 		);
 
