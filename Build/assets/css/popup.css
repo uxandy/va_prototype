@@ -461,7 +461,6 @@ html {
       right: -3px;
       background-color: #3e8ddd; }
   .bubble .input-controls {
-    border-top: 1px solid #d0d0d0;
     margin-top: 10px; }
     .bubble .input-controls span {
       font-weight: 700;
@@ -542,13 +541,36 @@ html {
     background-repeat: no-repeat;
     background-position: center; }
 
+.bubble ul {
+  margin: 0px;
+  padding: 0px;
+  margin-top: 10px; }
+  .bubble ul li {
+    list-style: none; }
+
 .img-wrapper {
-  height: 100px;
-  width: 100px;
+  width: 150px;
   display: inline-block;
   background: #f0f0f0;
   border: 1px solid #ddd;
   margin: 10px auto; }
+  .img-wrapper img {
+    max-width: 100%; }
+
+.thumb1 {
+  background-position: 50%;
+  background-size: 100%;
+  background-color: #f0f0f0;
+  background-repeat: no-repeat;
+  border: 1px solid #d0d0d0;
+  margin-top: 10px;
+  width: 100px;
+  height: 100px; }
+
+.thumb1 a {
+  display: block;
+  width: 100px;
+  height: 100px; }
 
 .chat-body {
   height: 100vh;
@@ -577,7 +599,7 @@ html {
   margin-bottom: 10px; }
 
 .loading {
-  font-size: 40px; }
+  font-size: 38px; }
 
 .loading span {
   font-size: 80px;

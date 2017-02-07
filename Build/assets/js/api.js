@@ -42,12 +42,16 @@
 		    }
 		});
 
+		var chatInput = {text: "hey"};
+		postVA(chatInput);
+
 	}
 
 	function postVA(x) {
 
 		var watsonInput = {};
 
+		console.log("Input given was: " + x);
 		watsonInput["input"] = x;
 		watsonInput["context"] = contextVA;
 
@@ -91,7 +95,7 @@
 
 		// Parse simple input anchors
 		$("va\\:input").each(function(){
-		        $(this).replaceWith('<a href="#">' + $(this).html() + '</a>');
+		        $(this).replaceWith('<a href="#" class="commande">' + $(this).html() + '</a>');
 		    }
 		);
 
@@ -102,10 +106,29 @@
 		);
 
 		$(".w4mvsImg").each(function(){
+				var src = $('.w4mvsImg').attr('src');
 				$(this).removeClass('w4mvsImg');
-		        $(this).wrap('<div class="img-wrapper"></div>');
+
+				$(this).replaceWith('<div class="thumb1" style="background-image: url(' + src + ')"><a href="' + src + '" target="_blank"></a></div>');
+				
+				// $(this).wrap('<div class="thumb1"><a href="' + src + '"></a></div>');
+				// $('.thumb1').css('background-image', 'url(' + src + ')');
+		        // $(this).wrap('<a href="' + src + '" target="_blank" class="img-wrapper"></a>');
 		    }
 		);
+
+		$(".bubble ul").each(function() {
+			$(this).wrap('<div class="input-controls"></div>');
+		});
+
+
+		$('.commande').click(function() {
+			var v = $(this).html();
+			var vo = {text: v};
+			$(".chat").append('<div class="bubble me">' + v + '</div>');
+			$('.chat').scrollTop($('.chat')[0].scrollHeight);
+			$(postVA(vo));
+		});
 
 	}
 
@@ -115,19 +138,33 @@
 
 $( document ).ajaxStart(function() {
   $(".chat").append('<div class="bubble you loading">' + '<span>.</span><span>.</span><span>.</span>' + '</div>');
+  $('.chat').scrollTop($('.chat')[0].scrollHeight);
 }).ajaxStop(function() {
   $(".loading").remove();
 });
 
 
+// [ TO DO FOR DEV ]
+// --------------------------------------------------------------------------------
+//| TIME STAMP AT THE TOP NEEDS TO RESOLVE LOCAL TIME.
+//| [DONE] WRITE INPUT TEXT PARSER/SEND INPUT VALUE OVER TO WASTSON TO BE RESOLVED.
+//| [DONE] TAKE A SENT YES/NO LINK ON CLICK AND APPEND THE USER AREA WITH THE VALUE, THEN SEND THAT VALUE OVER TO WATSON.
+//| IS WARRANTY SEPARATE FROM SOE OR WILL SOE CONTAIN A WARRANTY CHECK CALL?
+//| [DONE] WHEN PICTURE IS CLICKED, OPEN PICTURE IN NEW WINDOW
+//| FEEDBACK WHEN CHAT ENDS.
+//| IDLE TIME STAMP? NO TIMEOUT FOR WATSON?
+//| FONT UPSCALE/DOWNSCALE CONTROL ON COG
+//| ADD ARTIFICIAL SEPARATOR FOR LONG MESSAGES OR MULTI-TIERED MESSAGES
+//| SPOONMAN... SAVE ME.
+// --------------------------------------------------------------------------------
 
-
-
-
-
-
-
-
+// [ ITEMS TO CONSIDER ]
+// --------------------------------------------------------------------------------
+//| CHUNKING LARGE MESSAGES (BUBBLE-BREAK)
+//| STEPS
+//| BUBBLE ANIMATION
+//| AJAX LOADING INDICATOR AT THE TOP VS. IN CHAT BODY
+// --------------------------------------------------------------------------------
 
 
 
