@@ -6,7 +6,9 @@
 
 	// http://lenovo-tech-support.mybluemix.net/rest/conversation/api/v1/workspaces/c6ff8ad5-2df9-4be2-bcd9-6d9fb1ad6529/message
 	// var apiURL = "https://watson-api-explorer.mybluemix.net/conversation/api/v1/workspaces/0a0c06c1-8e31-4655-9067-58fcac5134fc/message?version=2016-09-20";
-	var apiURL = "https://lenovo-tech-support.mybluemix.net/rest/conversation/api/v1/workspaces/c6ff8ad5-2df9-4be2-bcd9-6d9fb1ad6529/message";
+	// lenovo-tech-support.mybluemix.net/conversation/api/v1/workspaces/{workspace_id}/message
+	// var apiURL = "https://lenovo-tech-support.mybluemix.net/rest/conversation/api/v1/workspaces/c6ff8ad5-2df9-4be2-bcd9-6d9fb1ad6529/message";
+	var apiURL = "https://lenovo-tech-support.mybluemix.net/conversation/api/v1/workspaces/{workspace_id}/message";
 	var dataInit = {};
 	var dataInit = {};
 	var contextVA = {};
@@ -71,6 +73,10 @@
 		  	// Fetch the output text from the returned array and pass it on to resultVA
 		  	resultVA = result.output.text[0];
 
+		  	for (i = 0; i < result.output.text.length; i++) {
+		  		console.log(JSON.stringify(result.output.text[i]));
+		  	}
+
 		  	// Stringify the text and append it to element HTML
 		  	// $("#poster").html(JSON.stringify(resultVA));
 
@@ -113,7 +119,10 @@
 		);
 
 		$(".bubble ul").each(function() {
-			$(this).wrap('<div class="input-controls"></div>');
+			if (!$(this).hasClass('control-box')){
+				$(this).addClass('control-box');
+				$('.control-box').wrap('<div class="input-controls"></div>');
+			}
 		});
 
 
