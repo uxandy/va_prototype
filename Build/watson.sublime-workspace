@@ -4,6 +4,54 @@
 		"selected_items":
 		[
 			[
+				"serial",
+				"serialValue"
+			],
+			[
+				"Ser",
+				"ServiceTrigger"
+			],
+			[
+				"conte",
+				"contextVA"
+			],
+			[
+				"has",
+				"hasClass\t.hasClass()"
+			],
+			[
+				"console",
+				"console.log()"
+			],
+			[
+				"out",
+				"output"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"replace",
+				"replaceWith\t.replaceWith()"
+			],
+			[
+				"pars",
+				"parseVA"
+			],
+			[
+				"chat",
+				"chatInput"
+			],
+			[
+				"post",
+				"postVA"
+			],
+			[
+				"result",
+				"resultVA"
+			],
+			[
 				"list-s",
 				"list-style"
 			],
@@ -20,6 +68,15 @@
 	"buffers":
 	[
 		{
+			"file": "includes/_header.html",
+			"settings":
+			{
+				"buffer_size": 579,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "index.html",
 			"settings":
 			{
@@ -32,7 +89,26 @@
 			"file": "popup.html",
 			"settings":
 			{
-				"buffer_size": 220,
+				"buffer_size": 202,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "includes/_popup-header.html",
+			"settings":
+			{
+				"buffer_size": 609,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "includes/_nav.html",
+			"settings":
+			{
+				"buffer_size": 377,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
@@ -55,11 +131,24 @@
 			}
 		},
 		{
+			"contents": "<div class=\"right\">\n\n\t<div class=\"chat active-chat\">\n\t\t<div class=\"conversation-start\">\n\t\t\t<span>Today, 5:38 PM</span>\n\t\t</div>\n\n<!-- \t\t<div class=\"bubble you\">\n\t\t\tHello, this is a watson api test... ask me something\n\n\t\t\t<br>\n\t\t\tEnter a serial number:\n\n\t\t\t<va:textbox\n\t\t\tname=\"SerialNumber\"\n\t\t\tservicetrigger=\"Warranty\"\n\t\t\tprompt=\"Enter Serial Number\"\n\t\t\tmaxlength=\"8\">\n\t\t\t</va:textbox>\n\t\t</div>\n\n\t\t<div class=\"bubble you\">\n\t\t\tQuestion with answers:\n\n\t\t\t<va:input>Yes</va:input>\n\t\t\t<va:input>No</va:input>\n\t\t</div>\n\n\t\t<div class=\"bubble you\">\n\t\t\tPlease refer to this Knowledge Base article:\n\t\t\t<va:link href=http://support.lenovo.com/us/en/find-product-name>How to Find my Serial Number</va:link>\n\t\t</div> -->\n\n\t\t\n\t</div>\n</div>\n\n<div class=\"chat-input\">\n\t<div class=\"write\">\n\t\t<!-- <a href=\"javascript:;\" class=\"write-link attach\"></a> -->\n\t\t<input id=\"chatbox\" type=\"text\" placeholder=\"Type here to chat with the virtual agent...\">\n\t\t<a href=\"javascript:;\" class=\"write-link smiley\"></a>\n\t\t<a href=\"javascript:;\" class=\"write-link send\"></a>\n\t</div>\n</div>\n\n\n\n<script>\n\t$('.chat').scrollTop($('.chat')[0].scrollHeight);\n</script>\n\n\n",
 			"file": "includes/_chat-body.html",
+			"file_size": 1134,
+			"file_write_time": 131309571550000000,
 			"settings":
 			{
-				"buffer_size": 1970,
-				"encoding": "UTF-8",
+				"buffer_size": 1134,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<!DOCTYPE html>\n<html>\n\n<head>\n\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  \n  \n        <!-- Hammer reload -->\n          <script>\n            setInterval(function(){\n              try {\n                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}\n                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')\n                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}\n                window.onbeforeunload = function() { ws = null }\n                ws.onmessage = function(){\n                  var links = document.getElementsByTagName('link');\n                    for (var i = 0; i < links.length;i++) {\n                    var link = links[i];\n                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) {\n                      href = link.href.replace(/((&|\\?)hammer=)[^&]+/,'');\n                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());\n                    }\n                  }\n                }\n              }catch(e){}\n            }, 1000)\n          </script>\n        <!-- /Hammer reload -->\n      \n  \n  <link rel='stylesheet' href='assets/css/normalize.css'>\n<link rel='stylesheet' href='assets/css/style.css'>\n  <link rel='stylesheet' href='assets/css/bootstrap-style.css'>\n  <link rel='stylesheet' href='assets/css/core.css'>\n  <script src='assets/js/jquery-1.8.3.min.js'></script>\n<script src='assets/js/app.js'></script>\n  <script src='assets/js/api.js'></script>\n  \n  <link href=\"assets/favicon.ico\" rel=\"shortcut icon\">\n  <link href=\"assets/apple-touch-icon.png\" rel=\"apple-touch-icon\">\n  \n  <title>VA PROJECT</title>\n  \n</head>\n\n<body>\n\n  <!-- <header> -->\n\n  <!-- </header> -->\n\n<!-- Side bar tab -->\n\n<div class=\"sidebar-flap\">\n\t<ul>\n\n\t\t<li class=\"feedback\">\n\n\t\t\t<div class=\"flap-text\">\n\t\t\t\t<span class=\"flap-label\">Feedback</span>\n\t\t\t</div>\n\t\t\t<div class=\"flap-icon\">\n\t\t\t\t<span class=\"glyphicon glyphicon-bullhorn\" aria-hidden=\"true\"></span>\n\t\t\t</div>\n\t\t</li>\n\n\n\t\t<li class=\"contact-us\">\n\n\t\t\t<div class=\"flap-text\">\n\t\t\t\t<span class=\"flap-label\">Contact Us</span>\n\t\t\t</div>\n\t\t\t<div class=\"flap-icon\">\n\t\t\t\t<span class=\"glyphicon glyphicon-globe\" aria-hidden=\"true\"></span>\n\t\t\t</div>\n\t\t</li>\n\n\n\t\t<a href=\"javascript:void(0);\" onclick=\"window.open('popup.html', '_blank', 'resizable=0,width=440,height=780,menubar=no');\">\n\t\t\t<li class=\"virtual-agent\">\n\n\t\t\t\t<div class=\"flap-text\">\n\t\t\t\t\t<span class=\"flap-label\">Virtual Agent</span>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"flap-icon\">\n\t\t\t\t\t<span class=\"glyphicon glyphicon-user\" aria-hidden=\"true\"></span>\n\t\t\t\t</div>\n\t\t\t</li>\n\t\t</a>\n\t</ul>\n</div>\n  \n</body>\n\n</html>",
+			"file": "Build/index.html",
+			"file_size": 2732,
+			"file_write_time": 131303915240000000,
+			"settings":
+			{
+				"buffer_size": 2732,
 				"line_ending": "Unix"
 			}
 		},
@@ -109,14 +198,22 @@
 			}
 		},
 		{
-			"contents": "\n\n.conversation-start {\n    position: relative;\n    width: 100%;\n    margin-bottom: 27px;\n    text-align: center;\n    span {\n        font-size: 14px;\n        display: inline-block;\n        color: #555;\n        &:before,&:after {\n            position: absolute;\n            top: 10px;\n            display: inline-block;\n            width: 30%;\n            height: 1px;\n            content: '';\n            background-color: #555;\n        }\n        &:before {\n            left: 0;\n        }\n        &:after {\n            right: 0;\n        }\n    }\n}\n\n$blue: $lenovo-blue;\n$white: #fff;\n$light: #999;\n$dark: #555;\n\n\n.bubble {\n    font-size: 16px;\n    position: relative;\n    display: inline-block;\n    clear: both;\n    margin-bottom: 15px;\n    padding: 13px 14px;\n    vertical-align: top;\n    border-radius: 5px;\n    box-shadow: 0 2px 4px -2px rgba(0,0,0,0.4);\n    &:before {\n        position: absolute;\n        top: 19px;\n        display: block;\n        width: 8px;\n        height: 6px;\n        content: '\\00a0';\n        transform: rotate(29deg) skew(-35deg);\n    }\n    &:last-child {\n        margin-bottom: 25px;\n    }\n    &.you {\n        float: left;\n        color: $dark;\n        background-color: #fff;\n        align-self: flex-start;\n        max-width: 90%;\n        // @include animation-name(slideFromLeft);\n        &:before {\n            left: -3px;\n            background-color: #fff;\n        }\n    }\n    &.me {\n        float: right;\n        color: $white;\n        background-color: $blue;\n        align-self: flex-end;\n        max-width: 90%;\n        // @include animation-name(slideFromRight);\n        &:before {\n            right: -3px;\n            background-color: $blue;\n        }\n    }\n\n\n    .input-controls {\n        border-top:1px solid #d0d0d0;\n        margin-top: 10px;\n\n        span {\n            font-weight: 700;\n            display: inline-block;\n            width:100%;\n            padding-top:10px;\n        }\n        ul {\n            margin:0;\n            padding: 0;\n            // padding-top:5px;\n            padding: 5px 0;\n            li {\n                // list-style: none;\n                // border:1px solid $blue;\n                // border-radius: 4px;\n                // margin-top:10px;\n                // padding:8px;\n\n                background: #f5f5f5 none repeat scroll 0 0;\n                border: medium none;\n                border-radius: 4px;\n                box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.52);\n                list-style: outside none none;\n                margin-top: 10px;\n                padding: 8px 12px;\n\n                &:hover {\n                    background: #fafafa;\n                }\n            }\n        }\n    }\n}\n\n.chat {\n    position: relative;\n    display: none;\n    // overflow: hidden;\n    overflow-y:scroll;\n    overflow-x:hidden;\n    // padding: 0 35px 92px;\n    // border-width: 1px 1px 1px 0;\n    // border-style: solid;\n    // border-color: $light;\n    border: none;\n    height: calc(100% - 48px);\n    // justify-content: flex-end;\n    // flex-direction: column;\n\n    padding: 80px 20px 40px;\n    width:100%;\n    // height: 600px;\n\n\n    height: 694px;\n    margin-bottom: -8px;\n    background: #f0f0f0;\n    &.active-chat {\n        // display: block;\n        // display: flex;\n        display: inline-block;\n        .bubble {\n            // @include transition-timing-function(cubic-bezier(.4,-.04, 1, 1));\n            @for $i from 1 through 10 {\n                &:nth-of-type(#{$i}) {\n                    // @include animation-duration(.15s *$i);\n                }\n            }\n        }\n    }\n}\n\n\n.write {\n    // background-color: #eceff1;\n    // border: 1px solid #999;\n    // border-radius: 5px;\n    height: 42px;\n    left: 30px;\n    // margin: auto 20px;\n    padding-left: 8px;\n    // width: 400px;\n    input {\n        font-size: 16px;\n        float: left;\n        width: 306px;\n        height: 40px;\n        padding: 0 10px;\n        color: $dark;\n        border: 0;\n        outline: none;\n        margin-right: 60px;\n        // background-color: #eceff1;\n\n        background: none;\n        // @include font;\n    }\n    .write-link {\n        &.attach {\n            &:before {\n                display: inline-block;\n                float: left;\n                width: 20px;\n                height: 42px;\n                content: '';\n                background-image: url('http://s1.postimg.org/s5gfy283f/attachemnt.png');\n                background-repeat: no-repeat;\n                background-position: center;\n            }\n        }\n        &.smiley {\n            &:before {\n                display: inline-block;\n                float: left;\n                width: 20px;\n                height: 42px;\n                content: '';\n                background-image: url('http://s14.postimg.org/q2ug83h7h/smiley.png');\n                background-repeat: no-repeat;\n                background-position: center;\n            }\n        }\n        &.send {\n            &:before {\n                display: inline-block;\n                float: left;\n                width: 20px;\n                height: 42px;\n                margin-left: 11px;\n                content: '';\n                background-image: url('http://s30.postimg.org/nz9dho0pp/send.png');\n                background-repeat: no-repeat;\n                background-position: center;\n            }\n        }\n    }\n}\n\n\n\n.right {\n    float: right;\n    height: 100%;\n    position: relative;\n    width: 100%;\n}\n\n.chat-input {\n    border-top: 1px solid #ccc;\n    padding-top: 5px;\n}",
 			"file": "assets/css/components/_conversation.scss",
-			"file_size": 5529,
-			"file_write_time": 131299322790000000,
 			"settings":
 			{
-				"buffer_size": 5519,
+				"buffer_size": 7162,
 				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "main {\n  margin: 80px auto 0; }\n\n.btn-color-text {\n  background: #ff6a00; }\n\n.btn-color-link {\n  background: #ff6a00; }\n\n.btn-color-warning {\n  background: #ff6a00; }\n\n/* Webfont: Lato-Black */\n@font-face {\n  font-family: 'Lato-900';\n  src: url(../fonts/lato/Lato-Black.eot);\n  /* IE9 Compat Modes */\n  src: url(../fonts/lato/Lato-Black.eot?#iefix) format(\"embedded-opentype\"), url(../fonts/lato/Lato-Black.woff2) format(\"woff2\"), url(../fonts/lato/Lato-Black.woff) format(\"woff\"), url(../fonts/lato/Lato-Black.ttf) format(\"truetype\");\n  font-style: normal;\n  font-weight: normal;\n  text-rendering: optimizeLegibility; }\n/* Webfont: Lato-BlackItalic */\n@font-face {\n  font-family: 'Lato-900';\n  src: url(../fonts/lato/Lato-BlackItalic.eot);\n  /* IE9 Compat Modes */\n  src: url(../fonts/lato/Lato-BlackItalic.eot?#iefix) format(\"embedded-opentype\"), url(../fonts/lato/Lato-BlackItalic.woff2) format(\"woff2\"), url(../fonts/lato/Lato-BlackItalic.woff) format(\"woff\"), url(../fonts/lato/Lato-BlackItalic.ttf) format(\"truetype\");\n  font-style: italic;\n  font-weight: normal;\n  text-rendering: optimizeLegibility; }\n/* Webfont: Lato-Bold */\n@font-face {\n  font-family: 'Lato-800';\n  src: url(../fonts/lato/Lato-Bold.eot);\n  /* IE9 Compat Modes */\n  src: url(../fonts/lato/Lato-Bold.eot?#iefix) format(\"embedded-opentype\"), url(../fonts/lato/Lato-Bold.woff2) format(\"woff2\"), url(../fonts/lato/Lato-Bold.woff) format(\"woff\"), url(../fonts/lato/Lato-Bold.ttf) format(\"truetype\");\n  font-style: normal;\n  font-weight: normal;\n  text-rendering: optimizeLegibility; }\n/* Webfont: Lato-BoldItalic */\n@font-face {\n  font-family: 'Lato-800';\n  src: url(../fonts/lato/Lato-BoldItalic.eot);\n  /* IE9 Compat Modes */\n  src: url(../fonts/lato/Lato-BoldItalic.eot?#iefix) format(\"embedded-opentype\"), url(../fonts/lato/Lato-BoldItalic.woff2) format(\"woff2\"), url(../fonts/lato/Lato-BoldItalic.woff) format(\"woff\"), url(../fonts/lato/Lato-BoldItalic.ttf) format(\"truetype\");\n  font-style: italic;\n  font-weight: normal;\n  text-rendering: optimizeLegibility; }\n/* Webfont: Lato-Hairline */\n@font-face {\n  font-family: 'Lato-100';\n  src: url(../fonts/lato/Lato-Hairline.eot);\n  /* IE9 Compat Modes */\n  src: url(../fonts/lato/Lato-Hairline.eot?#iefix) format(\"embedded-opentype\"), url(../fonts/lato/Lato-Hairline.woff2) format(\"woff2\"), url(../fonts/lato/Lato-Hairline.woff) format(\"woff\"), url(../fonts/lato/Lato-Hairline.ttf) format(\"truetype\");\n  font-style: normal;\n  font-weight: normal;\n  text-rendering: optimizeLegibility; }\n/* Webfont: Lato-HairlineItalic */\n@font-face {\n  font-family: 'Lato-100';\n  src: url(../fonts/lato/Lato-HairlineItalic.eot);\n  /* IE9 Compat Modes */\n  src: url(../fonts/lato/Lato-HairlineItalic.eot?#iefix) format(\"embedded-opentype\"), url(../fonts/lato/Lato-HairlineItalic.woff2) format(\"woff2\"), url(../fonts/lato/Lato-HairlineItalic.woff) format(\"woff\"), url(../fonts/lato/Lato-HairlineItalic.ttf) format(\"truetype\");\n  font-style: italic;\n  font-weight: normal;\n  text-rendering: optimizeLegibility; }\n/* Webfont: Lato-Heavy */\n@font-face {\n  font-family: 'Lato-600';\n  src: url(../fonts/lato/Lato-Heavy.eot);\n  /* IE9 Compat Modes */\n  src: url(../fonts/lato/Lato-Heavy.eot?#iefix) format(\"embedded-opentype\"), url(../fonts/lato/Lato-Heavy.woff2) format(\"woff2\"), url(../fonts/lato/Lato-Heavy.woff) format(\"woff\"), url(../fonts/lato/Lato-Heavy.ttf) format(\"truetype\");\n  font-style: normal;\n  font-weight: normal;\n  text-rendering: optimizeLegibility; }\n/* Webfont: Lato-HeavyItalic */\n@font-face {\n  font-family: 'Lato-600';\n  src: url(../fonts/lato/Lato-HeavyItalic.eot);\n  /* IE9 Compat Modes */\n  src: url(../fonts/lato/Lato-HeavyItalic.eot?#iefix) format(\"embedded-opentype\"), url(../fonts/lato/Lato-HeavyItalic.woff2) format(\"woff2\"), url(../fonts/lato/Lato-HeavyItalic.woff) format(\"woff\"), url(../fonts/lato/Lato-HeavyItalic.ttf) format(\"truetype\");\n  font-style: italic;\n  font-weight: normal;\n  text-rendering: optimizeLegibility; }\n/* Webfont: Lato-Italic */\n@font-face {\n  font-family: 'Lato-400';\n  src: url(../fonts/lato/Lato-Italic.eot);\n  /* IE9 Compat Modes */\n  src: url(../fonts/lato/Lato-Italic.eot?#iefix) format(\"embedded-opentype\"), url(../fonts/lato/Lato-Italic.woff2) format(\"woff2\"), url(../fonts/lato/Lato-Italic.woff) format(\"woff\"), url(../fonts/lato/Lato-Italic.ttf) format(\"truetype\");\n  font-style: italic;\n  font-weight: normal;\n  text-rendering: optimizeLegibility; }\n/* Webfont: Lato-Light */\n@font-face {\n  font-family: 'Lato-300';\n  src: url(../fonts/lato/Lato-Light.eot);\n  /* IE9 Compat Modes */\n  src: url(../fonts/lato/Lato-Light.eot?#iefix) format(\"embedded-opentype\"), url(../fonts/lato/Lato-Light.woff2) format(\"woff2\"), url(../fonts/lato/Lato-Light.woff) format(\"woff\"), url(../fonts/lato/Lato-Light.ttf) format(\"truetype\");\n  font-style: normal;\n  font-weight: normal;\n  text-rendering: optimizeLegibility; }\n/* Webfont: Lato-LightItalic */\n@font-face {\n  font-family: 'Lato-300';\n  src: url(../fonts/lato/Lato-LightItalic.eot);\n  /* IE9 Compat Modes */\n  src: url(../fonts/lato/Lato-LightItalic.eot?#iefix) format(\"embedded-opentype\"), url(../fonts/lato/Lato-LightItalic.woff2) format(\"woff2\"), url(../fonts/lato/Lato-LightItalic.woff) format(\"woff\"), url(../fonts/lato/Lato-LightItalic.ttf) format(\"truetype\");\n  font-style: italic;\n  font-weight: normal;\n  text-rendering: optimizeLegibility; }\n/* Webfont: Lato-Medium */\n@font-face {\n  font-family: 'Lato-500';\n  src: url(../fonts/lato/Lato-Medium.eot);\n  /* IE9 Compat Modes */\n  src: url(../fonts/lato/Lato-Medium.eot?#iefix) format(\"embedded-opentype\"), url(../fonts/lato/Lato-Medium.woff2) format(\"woff2\"), url(../fonts/lato/Lato-Medium.woff) format(\"woff\"), url(../fonts/lato/Lato-Medium.ttf) format(\"truetype\");\n  font-style: normal;\n  font-weight: normal;\n  text-rendering: optimizeLegibility; }\n/* Webfont: Lato-MediumItalic */\n@font-face {\n  font-family: 'Lato-500';\n  src: url(../fonts/lato/Lato-MediumItalic.eot);\n  /* IE9 Compat Modes */\n  src: url(../fonts/lato/Lato-MediumItalic.eot?#iefix) format(\"embedded-opentype\"), url(../fonts/lato/Lato-MediumItalic.woff2) format(\"woff2\"), url(../fonts/lato/Lato-MediumItalic.woff) format(\"woff\"), url(../fonts/lato/Lato-MediumItalic.ttf) format(\"truetype\");\n  font-style: italic;\n  font-weight: normal;\n  text-rendering: optimizeLegibility; }\n/* Webfont: Lato-Regular */\n@font-face {\n  font-family: 'Lato-400';\n  src: url(../fonts/lato/Lato-Regular.eot);\n  /* IE9 Compat Modes */\n  src: url(../fonts/lato/Lato-Regular.eot?#iefix) format(\"embedded-opentype\"), url(../fonts/lato/Lato-Regular.woff2) format(\"woff2\"), url(../fonts/lato/Lato-Regular.woff) format(\"woff\"), url(../fonts/lato/Lato-Regular.ttf) format(\"truetype\");\n  font-style: normal;\n  font-weight: normal;\n  text-rendering: optimizeLegibility; }\n/* Webfont: Lato-Semibold */\n@font-face {\n  font-family: 'Lato-700';\n  src: url(../fonts/lato/Lato-Semibold.eot);\n  /* IE9 Compat Modes */\n  src: url(../fonts/lato/Lato-Semibold.eot?#iefix) format(\"embedded-opentype\"), url(../fonts/lato/Lato-Semibold.woff2) format(\"woff2\"), url(../fonts/lato/Lato-Semibold.woff) format(\"woff\"), url(../fonts/lato/Lato-Semibold.ttf) format(\"truetype\");\n  font-style: normal;\n  font-weight: normal;\n  text-rendering: optimizeLegibility; }\n/* Webfont: Lato-SemiboldItalic */\n@font-face {\n  font-family: 'Lato-700';\n  src: url(../fonts/lato/Lato-SemiboldItalic.eot);\n  /* IE9 Compat Modes */\n  src: url(../fonts/lato/Lato-SemiboldItalic.eot?#iefix) format(\"embedded-opentype\"), url(../fonts/lato/Lato-SemiboldItalic.woff2) format(\"woff2\"), url(../fonts/lato/Lato-SemiboldItalic.woff) format(\"woff\"), url(../fonts/lato/Lato-SemiboldItalic.ttf) format(\"truetype\");\n  font-style: italic;\n  font-weight: normal;\n  text-rendering: optimizeLegibility; }\n/* Webfont: Lato-Thin */\n@font-face {\n  font-family: 'Lato-200';\n  src: url(../fonts/lato/Lato-Thin.eot);\n  /* IE9 Compat Modes */\n  src: url(../fonts/lato/Lato-Thin.eot?#iefix) format(\"embedded-opentype\"), url(../fonts/lato/Lato-Thin.woff2) format(\"woff2\"), url(../fonts/lato/Lato-Thin.woff) format(\"woff\"), url(../fonts/lato/Lato-Thin.ttf) format(\"truetype\");\n  font-style: normal;\n  font-weight: normal;\n  text-rendering: optimizeLegibility; }\n/* Webfont: Lato-ThinItalic */\n@font-face {\n  font-family: 'Lato-200';\n  src: url(../fonts/lato/Lato-ThinItalic.eot);\n  /* IE9 Compat Modes */\n  src: url(../fonts/lato/Lato-ThinItalic.eot?#iefix) format(\"embedded-opentype\"), url(../fonts/lato/Lato-ThinItalic.woff2) format(\"woff2\"), url(../fonts/lato/Lato-ThinItalic.woff) format(\"woff\"), url(../fonts/lato/Lato-ThinItalic.ttf) format(\"truetype\");\n  font-style: italic;\n  font-weight: normal;\n  text-rendering: optimizeLegibility; }\nselect.bs-select-hidden,\nselect.selectpicker {\n  display: none !important; }\n\n.bootstrap-select {\n  width: 220px \\0;\n  /*IE9 and below*/ }\n  .bootstrap-select > .dropdown-toggle {\n    width: 100%;\n    padding-right: 25px;\n    z-index: 1; }\n    .bootstrap-select > .dropdown-toggle.bs-placeholder, .bootstrap-select > .dropdown-toggle.bs-placeholder:hover, .bootstrap-select > .dropdown-toggle.bs-placeholder:focus, .bootstrap-select > .dropdown-toggle.bs-placeholder:active {\n      color: #999; }\n  .bootstrap-select > select {\n    position: absolute !important;\n    bottom: 0;\n    left: 50%;\n    display: block !important;\n    width: 0.5px !important;\n    height: 100% !important;\n    padding: 0 !important;\n    opacity: 0 !important;\n    border: none; }\n    .bootstrap-select > select.mobile-device {\n      top: 0;\n      left: 0;\n      display: block !important;\n      width: 100% !important;\n      z-index: 2; }\n  .has-error .bootstrap-select .dropdown-toggle, .error .bootstrap-select .dropdown-toggle {\n    border-color: #b94a48; }\n  .bootstrap-select.fit-width {\n    width: auto !important; }\n  .bootstrap-select:not([class*=\"col-\"]):not([class*=\"form-control\"]):not(.input-group-btn) {\n    width: 220px; }\n  .bootstrap-select .dropdown-toggle:focus {\n    outline: thin dotted #333333 !important;\n    outline: 5px auto -webkit-focus-ring-color !important;\n    outline-offset: -2px; }\n\n.bootstrap-select.form-control {\n  margin-bottom: 0;\n  padding: 0;\n  border: none; }\n  .bootstrap-select.form-control:not([class*=\"col-\"]) {\n    width: 100%; }\n  .bootstrap-select.form-control.input-group-btn {\n    z-index: auto; }\n    .bootstrap-select.form-control.input-group-btn:not(:first-child):not(:last-child) > .btn {\n      border-radius: 0; }\n\n.bootstrap-select.btn-group:not(.input-group-btn), .bootstrap-select.btn-group[class*=\"col-\"] {\n  float: none;\n  display: inline-block;\n  margin-left: 0; }\n.bootstrap-select.btn-group.dropdown-menu-right, .bootstrap-select.btn-group[class*=\"col-\"].dropdown-menu-right, .row .bootstrap-select.btn-group[class*=\"col-\"].dropdown-menu-right {\n  float: right; }\n.form-inline .bootstrap-select.btn-group, .form-horizontal .bootstrap-select.btn-group, .form-group .bootstrap-select.btn-group {\n  margin-bottom: 0; }\n.form-group-lg .bootstrap-select.btn-group.form-control, .form-group-sm .bootstrap-select.btn-group.form-control {\n  padding: 0; }\n.form-inline .bootstrap-select.btn-group .form-control {\n  width: 100%; }\n.bootstrap-select.btn-group.disabled,\n.bootstrap-select.btn-group > .disabled {\n  cursor: not-allowed; }\n  .bootstrap-select.btn-group.disabled:focus,\n  .bootstrap-select.btn-group > .disabled:focus {\n    outline: none !important; }\n.bootstrap-select.btn-group.bs-container {\n  position: absolute;\n  height: 0 !important;\n  padding: 0 !important; }\n  .bootstrap-select.btn-group.bs-container .dropdown-menu {\n    z-index: 1060; }\n.bootstrap-select.btn-group .dropdown-toggle .filter-option {\n  display: inline-block;\n  overflow: hidden;\n  width: 100%;\n  text-align: left; }\n.bootstrap-select.btn-group .dropdown-toggle .caret {\n  position: absolute;\n  top: 50%;\n  right: 12px;\n  margin-top: -2px;\n  vertical-align: middle; }\n.bootstrap-select.btn-group[class*=\"col-\"] .dropdown-toggle {\n  width: 100%; }\n.bootstrap-select.btn-group .dropdown-menu {\n  min-width: 100%;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box; }\n  .bootstrap-select.btn-group .dropdown-menu.inner {\n    position: static;\n    float: none;\n    border: 0;\n    padding: 0;\n    margin: 0;\n    border-radius: 0;\n    box-shadow: none; }\n  .bootstrap-select.btn-group .dropdown-menu li {\n    position: relative; }\n    .bootstrap-select.btn-group .dropdown-menu li.active small {\n      color: #fff; }\n    .bootstrap-select.btn-group .dropdown-menu li.disabled a {\n      cursor: not-allowed; }\n    .bootstrap-select.btn-group .dropdown-menu li a {\n      cursor: pointer;\n      user-select: none; }\n      .bootstrap-select.btn-group .dropdown-menu li a.opt {\n        position: relative;\n        padding-left: 2.25em; }\n      .bootstrap-select.btn-group .dropdown-menu li a span.check-mark {\n        display: none; }\n      .bootstrap-select.btn-group .dropdown-menu li a span.text {\n        display: inline-block; }\n    .bootstrap-select.btn-group .dropdown-menu li small {\n      padding-left: 0.5em; }\n  .bootstrap-select.btn-group .dropdown-menu .notify {\n    position: absolute;\n    bottom: 5px;\n    width: 96%;\n    margin: 0 2%;\n    min-height: 26px;\n    padding: 3px 5px;\n    background: whitesmoke;\n    border: 1px solid #e3e3e3;\n    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);\n    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);\n    pointer-events: none;\n    opacity: 0.9;\n    -webkit-box-sizing: border-box;\n    -moz-box-sizing: border-box;\n    box-sizing: border-box; }\n.bootstrap-select.btn-group .no-results {\n  padding: 3px;\n  background: #f5f5f5;\n  margin: 0 5px;\n  white-space: nowrap; }\n.bootstrap-select.btn-group.fit-width .dropdown-toggle .filter-option {\n  position: static; }\n.bootstrap-select.btn-group.fit-width .dropdown-toggle .caret {\n  position: static;\n  top: auto;\n  margin-top: -1px; }\n.bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a span.check-mark {\n  position: absolute;\n  display: inline-block;\n  right: 15px;\n  margin-top: 5px; }\n.bootstrap-select.btn-group.show-tick .dropdown-menu li a span.text {\n  margin-right: 34px; }\n\n.bootstrap-select.show-menu-arrow.open > .dropdown-toggle {\n  z-index: 1061; }\n.bootstrap-select.show-menu-arrow .dropdown-toggle:before {\n  content: '';\n  border-left: 7px solid transparent;\n  border-right: 7px solid transparent;\n  border-bottom: 7px solid rgba(204, 204, 204, 0.2);\n  position: absolute;\n  bottom: -4px;\n  left: 9px;\n  display: none; }\n.bootstrap-select.show-menu-arrow .dropdown-toggle:after {\n  content: '';\n  border-left: 6px solid transparent;\n  border-right: 6px solid transparent;\n  border-bottom: 6px solid white;\n  position: absolute;\n  bottom: -4px;\n  left: 10px;\n  display: none; }\n.bootstrap-select.show-menu-arrow.dropup .dropdown-toggle:before {\n  bottom: auto;\n  top: -3px;\n  border-top: 7px solid rgba(204, 204, 204, 0.2);\n  border-bottom: 0; }\n.bootstrap-select.show-menu-arrow.dropup .dropdown-toggle:after {\n  bottom: auto;\n  top: -3px;\n  border-top: 6px solid white;\n  border-bottom: 0; }\n.bootstrap-select.show-menu-arrow.pull-right .dropdown-toggle:before {\n  right: 12px;\n  left: auto; }\n.bootstrap-select.show-menu-arrow.pull-right .dropdown-toggle:after {\n  right: 13px;\n  left: auto; }\n.bootstrap-select.show-menu-arrow.open > .dropdown-toggle:before, .bootstrap-select.show-menu-arrow.open > .dropdown-toggle:after {\n  display: block; }\n\n.bs-searchbox,\n.bs-actionsbox,\n.bs-donebutton {\n  padding: 4px 8px; }\n\n.bs-actionsbox {\n  width: 100%;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box; }\n  .bs-actionsbox .btn-group button {\n    width: 50%; }\n\n.bs-donebutton {\n  float: left;\n  width: 100%;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box; }\n  .bs-donebutton .btn-group button {\n    width: 100%; }\n\n.bs-searchbox + .bs-actionsbox {\n  padding: 0 8px 4px; }\n.bs-searchbox .form-control {\n  margin-bottom: 0;\n  width: 100%;\n  float: none; }\n\nhtml {\n  height: 100%;\n  font-size: 16px; }\n  html body {\n    font-family: Lato-400; }\n\n.conversation-start {\n  position: relative;\n  width: 100%;\n  margin-bottom: 27px;\n  text-align: center; }\n  .conversation-start span {\n    font-size: 14px;\n    display: inline-block;\n    color: #555; }\n    .conversation-start span:before, .conversation-start span:after {\n      position: absolute;\n      top: 10px;\n      display: inline-block;\n      width: 30%;\n      height: 1px;\n      content: '';\n      background-color: #555; }\n    .conversation-start span:before {\n      left: 0; }\n    .conversation-start span:after {\n      right: 0; }\n\n.bubble {\n  font-size: 16px;\n  position: relative;\n  display: inline-block;\n  clear: both;\n  margin-bottom: 15px;\n  padding: 13px 14px;\n  vertical-align: top;\n  border-radius: 5px;\n  box-shadow: 0 2px 4px -2px rgba(0, 0, 0, 0.4); }\n  .bubble:before {\n    position: absolute;\n    top: 19px;\n    display: block;\n    width: 8px;\n    height: 6px;\n    content: '\\00a0';\n    transform: rotate(29deg) skew(-35deg); }\n  .bubble:last-child {\n    margin-bottom: 25px; }\n  .bubble.you {\n    float: left;\n    color: #555;\n    background-color: #fff;\n    align-self: flex-start;\n    max-width: 90%; }\n    .bubble.you:before {\n      left: -3px;\n      background-color: #fff; }\n  .bubble.me {\n    float: right;\n    color: #fff;\n    background-color: #3e8ddd;\n    align-self: flex-end;\n    max-width: 90%; }\n    .bubble.me:before {\n      right: -3px;\n      background-color: #3e8ddd; }\n  .bubble .input-controls {\n    margin-top: 10px; }\n    .bubble .input-controls span {\n      font-weight: 700;\n      display: inline-block;\n      width: 100%;\n      padding-top: 10px; }\n    .bubble .input-controls ul {\n      margin: 0;\n      padding: 0;\n      padding: 5px 0; }\n      .bubble .input-controls ul li {\n        background: #f5f5f5 none repeat scroll 0 0;\n        border: medium none;\n        border-radius: 4px;\n        box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.52);\n        list-style: outside none none;\n        margin-top: 10px;\n        padding: 8px 12px; }\n        .bubble .input-controls ul li:hover {\n          background: #fafafa; }\n\n.chat {\n  position: relative;\n  display: none;\n  overflow-y: scroll;\n  overflow-x: hidden;\n  border: none;\n  height: calc(100% - 48px);\n  padding: 80px 20px 40px;\n  width: 100%;\n  height: 100%;\n  margin-bottom: -8px;\n  background: #f0f0f0; }\n  .chat.active-chat {\n    display: inline-block; }\n\n.write {\n  height: 42px;\n  left: 30px;\n  padding-left: 8px; }\n  .write input {\n    font-size: 16px;\n    float: left;\n    width: 306px;\n    height: 40px;\n    padding: 0 10px;\n    color: #555;\n    border: 0;\n    outline: none;\n    margin-right: 60px;\n    background: none; }\n  .write .write-link.attach:before {\n    display: inline-block;\n    float: left;\n    width: 20px;\n    height: 42px;\n    content: '';\n    background-image: url(\"http://s1.postimg.org/s5gfy283f/attachemnt.png\");\n    background-repeat: no-repeat;\n    background-position: center; }\n  .write .write-link.smiley:before {\n    display: inline-block;\n    float: left;\n    width: 20px;\n    height: 42px;\n    content: '';\n    background-image: url(\"http://s14.postimg.org/q2ug83h7h/smiley.png\");\n    background-repeat: no-repeat;\n    background-position: center; }\n  .write .write-link.send:before {\n    display: inline-block;\n    float: left;\n    width: 20px;\n    height: 42px;\n    margin-left: 11px;\n    content: '';\n    background-image: url(\"http://s30.postimg.org/nz9dho0pp/send.png\");\n    background-repeat: no-repeat;\n    background-position: center; }\n\n.bubble ul {\n  margin: 0px;\n  padding: 0px;\n  margin-top: 10px; }\n  .bubble ul li {\n    list-style: none; }\n\n.img-wrapper {\n  width: 150px;\n  display: inline-block;\n  background: #f0f0f0;\n  border: 1px solid #ddd;\n  margin: 10px auto; }\n  .img-wrapper img {\n    max-width: 100%; }\n\n.thumb1 {\n  background-position: 50%;\n  background-size: 100%;\n  background-color: #f0f0f0;\n  background-repeat: no-repeat;\n  border: 1px solid #d0d0d0;\n  margin-top: 10px;\n  width: 100px;\n  height: 100px; }\n\n.thumb1 a {\n  display: block;\n  width: 100px;\n  height: 100px; }\n\n.chat-body {\n  height: 100vh;\n  position: relative; }\n\n.right {\n  float: right;\n  height: 100vh;\n  position: relative;\n  width: 100%;\n  padding-bottom: 100px; }\n\n.chat-input {\n  background: white none repeat scroll 0 0;\n  border-top: 1px solid #ccc;\n  bottom: 0;\n  height: 100px;\n  padding-top: 5px;\n  position: absolute;\n  width: 100%; }\n\n.input-field {\n  border-top: 1px solid #f0f0f0;\n  padding-top: 20px;\n  margin-top: 15px;\n  margin-bottom: 10px; }\n\n.loading {\n  font-size: 38px; }\n\n.loading span {\n  font-size: 80px;\n  animation-name: blink;\n  animation-duration: 1.4s;\n  animation-iteration-count: infinite;\n  animation-fill-mode: both;\n  display: block;\n  height: 26px;\n  margin: 0;\n  padding: 0;\n  line-height: 0;\n  float: left;\n  position: relative;\n  bottom: 6px; }\n\n.loading span:nth-child(2) {\n  animation-delay: .2s; }\n\n.loading span:nth-child(3) {\n  animation-delay: .4s; }\n\n@keyframes blink {\n  0% {\n    opacity: .2; }\n  20% {\n    opacity: 1; }\n  100% {\n    opacity: .2; } }\nsection.chat-header {\n  background: rgba(255, 255, 255, 0.9);\n  width: 100%;\n  position: fixed;\n  border-bottom: 1px solid #C4BEB6;\n  height: 60px;\n  z-index: 10; }\n  section.chat-header .logo {\n    display: inline-block;\n    left: 0; }\n    section.chat-header .logo img {\n      width: 40px;\n      margin-top: 4px;\n      margin-left: 10px; }\n    section.chat-header .logo span.logo-label {\n      position: relative;\n      top: 5px;\n      display: inline-block; }\n  section.chat-header .user-bar {\n    display: inline-block;\n    right: 0;\n    float: right; }\n    section.chat-header .user-bar ul li {\n      list-style: none;\n      display: inline-block; }\n      section.chat-header .user-bar ul li span.glyphicon {\n        font-size: 24px; }\n      section.chat-header .user-bar ul li.user-profile, section.chat-header .user-bar ul li.user-settings {\n        padding: 15px;\n        box-sizing: border-box; }",
+			"file": "Build/assets/css/popup.css",
+			"file_size": 22040,
+			"file_write_time": 131306278550000000,
+			"settings":
+			{
+				"buffer_size": 22040,
 				"line_ending": "Unix"
 			}
 		},
@@ -128,6 +225,45 @@
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"contents": "<!DOCTYPE html>\n<html>\n\n<head>\n\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  \n  \n        <!-- Hammer reload -->\n          <script>\n            setInterval(function(){\n              try {\n                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}\n                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')\n                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}\n                window.onbeforeunload = function() { ws = null }\n                ws.onmessage = function(){\n                  var links = document.getElementsByTagName('link');\n                    for (var i = 0; i < links.length;i++) {\n                    var link = links[i];\n                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) {\n                      href = link.href.replace(/((&|\\?)hammer=)[^&]+/,'');\n                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());\n                    }\n                  }\n                }\n              }catch(e){}\n            }, 1000)\n          </script>\n        <!-- /Hammer reload -->\n      \n  \n  <link rel='stylesheet' href='assets/css/normalize.css'>\n<link rel='stylesheet' href='assets/css/style.css'>\n  <link rel='stylesheet' href='assets/css/bootstrap-style.css'>\n  <link rel='stylesheet' href='assets/css/popup.css'>\n  <script src='assets/js/jquery-1.8.3.min.js'></script>\n<script src='assets/js/app.js'></script>\n  <script src='assets/js/api.js'></script>\n  \n  <link href=\"assets/favicon.ico\" rel=\"shortcut icon\">\n  <link href=\"assets/apple-touch-icon.png\" rel=\"apple-touch-icon\">\n  \n  <title>CHAT WINDOW</title>\n  \n</head>\n\n<body>\n\n  <!-- <header> -->\n    <!-- <@>include _nav -->\n  <!-- </header> -->\n\n<section class=\"chat-header\">\n\t<!-- CHAT HEADER -->\n\t<div class=\"logo\">\n\t\t<img src=\"assets/img/logo.svg\" alt=\"\">\n\t\t<span class=\"logo-label\"> Virtual Assistant</span>\n\t</div>\n\t<div class=\"user-bar\">\n\t\t<ul>\n\t\t\t<a href=\"#\"><li class=\"user-profile\"><span class=\"glyphicon glyphicon-user\" aria-hidden=\"true\"></span></li></a>\n\t\t\t<a href=\"#\"><li class=\"user-settings\"><span class=\"glyphicon glyphicon-cog\" aria-hidden=\"true\"></span></li></a>\n\t\t</ul>\n\t</div>\n</section>\n\n<section class=\"chat-body\">\n\t<div class=\"right\">\n\n\t<div class=\"chat active-chat\">\n\t\t<div class=\"conversation-start\">\n\t\t\t<span>Today, 5:38 PM</span>\n\t\t</div>\n\n<!-- \t\t<div class=\"bubble you\">\n\t\t\tHello, this is a watson api test... ask me something\n\n\t\t\t<br>\n\t\t\tEnter a serial number:\n\n\t\t\t<va:textbox\n\t\t\tname=\"SerialNumber\"\n\t\t\tservicetrigger=\"Warranty\"\n\t\t\tprompt=\"Enter Serial Number\"\n\t\t\tmaxlength=\"8\">\n\t\t\t</va:textbox>\n\t\t</div>\n\n\t\t<div class=\"bubble you\">\n\t\t\tQuestion with answers:\n\n\t\t\t<va:input>Yes</va:input>\n\t\t\t<va:input>No</va:input>\n\t\t</div>\n\n\t\t<div class=\"bubble you\">\n\t\t\tPlease refer to this Knowledge Base article:\n\t\t\t<va:link href=http://support.lenovo.com/us/en/find-product-name>How to Find my Serial Number</va:link>\n\t\t</div> -->\n\n\t\t\n\t</div>\n</div>\n\n<div class=\"chat-input\">\n\t<div class=\"write\">\n\t\t<!-- <a href=\"javascript:;\" class=\"write-link attach\"></a> -->\n\t\t<input id=\"chatbox\" type=\"text\" placeholder=\"Type here to chat with the virtual agent...\">\n\t\t<a href=\"javascript:;\" class=\"write-link smiley\"></a>\n\t\t<a href=\"javascript:;\" class=\"write-link send\"></a>\n\t</div>\n</div>\n\n\n\n<script>\n\t$('.chat').scrollTop($('.chat')[0].scrollHeight);\n</script>\n\n\n\n</section>\n\n</body>\n\n</html>",
+			"file": "Build/popup.html",
+			"file_size": 3496,
+			"file_write_time": 131309531020000000,
+			"settings":
+			{
+				"buffer_size": 3496,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/js/api.js",
+			"settings":
+			{
+				"buffer_size": 7876,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Package Control Messages\n========================\n\nJavaScript Completions\n----------------------\n\n  JavaScript Completions Package\n  ===============================\n  \n  How To USE\n  ==========\n  \n  To try it, just write.\n  \n  If you like this plugin, \"Star\" it on ---> https://github.com/pichillilorenzo/JavaScript-Completions <---\n  \n  jQuery and NativeScript completions disabled by default!\n  You can enable them on Preferences -> Package Settings -> JavaScript Completions.\n  \n  Some features could use npm!\n  \n  In Windows you must install it! Download it from https://nodejs.org.\n  To OSX and Linux, it will be downloaded automatically with nodejs.\n  \n  Features list:\n  - \"Find JavaScript Description\" Feature\n  - \"On Hover Description\" Feature\n  - \"Evaluate JavaScript\" Feature\n  - \"Can I use?\" Feature\n  - \"JSDoc\" Feature\n  - Context menu options\n  \n  \n  ENABLE or DISABLE completions\n  =============================\n  \n  You can ENABLE or DISABLE completions! Just go to Preferences -> Package Settings -> JavaScript Completions\n  \n  \n  \"Find JavaScript Description\" Feature\n  =====================================\n  \n  -- Supported only by Sublime Text 3 --\n  \n  key-map of this feature disabled by default!\n  \n  You can check the description of function/property/method by selecting the word (or, in case, it will take the first word near the blinking cursor) you want find. \n  \"right-click\" on your mouse and click on \"Find JavaScript Description\".\n  It will show a popup with the list of possible descriptions or, in some case, the direct description. \n  \n  In case, you can also use \"key-map\"! Just go to Preferences -> Package Settings -> JavaScript Completions and enable it.\n  \n  \"On Hover Description\" Feature\n  ==============================\n  \n  Supported only by Sublime Text 3, Build >= 3124\n  \n  Just put the cursor over a name of a function, property or constructor and it will appear a little popup with all matching found from the \"/sublime-completions\" list enabled. \n  \n  - F = function\n  - P = property\n  - C = constructor\n  \n  \n  \"Evaluate JavaScript\" Feature\n  =============================\n  \n  -- Supported only by Sublime Text 3 --\n  \n  This feature uses node.js (v6.6.0) executable.\n  You can change the node version on Preferences -> Package Settings -> Evaluate JavaScript settings\n  \n  It will download automaticaly the binary for your OS.\n  A message will appear on the \"status bar\" of Sublime Text.\n  \n  context menu option of this feature disabled by default!\n  key-map of this feature disabled by default!\n  \n  You can evaluate the entire text selection or the current line! \n  If you select a text region and evaluate it, in the gutter of the editor will appear 2 white dots.\n  The first white dot represents the start of the region and the second white dot represents the end of the region.\n  You can eventually modify the region and, without reselect the same region, you can evaluate it again! \n  If you want hide this 2 dots, there is an entry on the context menu \"Evaluate JavaScript\".\n  \n  When you evaluate code, this plugin will prepend \"use strict\"; automaticaly!\n  \n  There are two main mode to evaluate code:\n  - eval, https://nodejs.org/dist/latest-v6.x/docs/api/cli.html#cli_e_eval_script\n  - print, https://nodejs.org/dist/latest-v6.x/docs/api/cli.html#cli_p_print_script\n  \n  To enable this feature on context menu, go to Preferences -> Package Settings -> Evaluate JavaScript and enable it.\n  In case, you can also use \"key-map\"! Just go to Preferences -> Package Settings -> Evaluate JavaScript and enable it.\n  \n  \n  \"Can I use?\" Feature\n  ====================\n  \n  Supported only by Sublime Text 3, Build >= 3124\n  \n  This feature uses \"can i use\" json data from this repository: https://github.com/Fyrd/caniuse, that contains raw data from the http://caniuse.com support tables.\n  Thanks to @Fyrd.\n  \n  You can use this feature in HTML, CSS and JavaScript context!\n  Just put the cursor on the word you want to check, \"right-click\" -> \"Can I use?\" and it will appear an input panel with all items that have a name matching with the word.\n  You can use key-map: ctrl+alt+w. You can also change it. Just go to Preferences -> Package Settings ->  JavaScript Completions Tools -> Key Bindings - User.\n  After selecting an item from the list, it will appear a popup with all information from the http://caniuse.com support tables.\n  You can also use the menu \"JavaScript Completions Tools\" on the top and select 'Search on \"Can I use\" list' to search what you want.\n  \n  \n  \"JSDoc\" Feature\n  ===============\n  \n  Supported only by Sublime Text 3\n  \n  Requires npm\n  \n  This feature uses https://github.com/jsdoc3/jsdoc to generate API documentation.\n  \n  You can find it under \"JavaScript Completions Tools\" menu -> JSDoc.\n  \n  There are 2 main menu items:\n  - Generate Documentation\n  - Add jsdoc-settings.json to the current project folder\n  \n  These items can be used only with a project folder opened.\n  \"Generate Documentation\" uses the jsdoc command line to generate documentation.\n  It uses jsdoc-settings.json file for configuration or, alternately, it will use default configuration.\n  The options (with default values) availables are:\n  {\n    \"jsdoc_conf_file\": \"conf.json\",\n    \"destination_folder\": \"out\",\n    \"display_symbols_access_property\": \"all\",\n    \"search_within_subdirectories\": false,\n    \"encoding_when_reading_all_source_files\": \"utf-8\",\n    \"template_path\": \"\",\n    \"tutorials_path\": \"\",\n    \"include_symbols_marked_with_the_private_tag\": false,\n    \"pedantic_mode\": false,\n    \"query_string_to_parse_and_store_in_global_variable\": \"\"\n  }\n  \n  \"Add jsdoc-settings.json to the current project folder\" will add a jsdoc-settings.json file with default values to the current project folder.\n  \n  How to use JSDoc: http://usejsdoc.org/\n  \n  \n  Context menu options\n  ====================\n  \n  Context menu options:\n  - Surround With\n  - Delete Surrounded\n  - Create Class from object literal\n  - Sort array\n  - Split string lines to variable\n  \n  ## Surround With ##\n  \n  You MUST first select text to \"enable\" these options.\n  \n  You can surround code with:\n  - if statement\n  - if else statement (this works only if you selected 2 regions)\n  - while statement\n  - do while statement\n  - for statement\n  - try catch statement\n  - try catch finally statement\n  - Multi-line comment\n  - Single-line comment\n  \n  This option works also on multiple selections at once.\n  \n  ## Delete Surrounded ##\n  \n  Options are:\n  - Delete multi-line comment\n  - Delete single-line comment\n  - Strip quoted string\n  \n  This option works also on multiple selections at once.\n  \n  ## Create Class from object literal ##\n  \n  This option create a JavaScript Class from an object literal (Constructor with all setter and getter for each field).\n  You can set default values or use the string \"required\" to say that a field hasn't a default value.\n  To work properly, you MUST declare a variable and assign an object literal to it, like this example:\n  \n  var Person = {\n    name: \"required\",\n    surname: \"required\",\n    email: \"\",\n    age: 18\n  }\n  \n  This option works also on multiple selections at once.\n  \n  ## Sort array ##\n  \n  Just put the cursor between brackets and will appear a menu with these options:\n  - Sort array ASC ( compare function: function(x,y){return x-y;} )\n  - Sort array DESC ( compare function: function(x,y){return y-x;} )\n  - Sort array alphabetically ASC\n  - Sort array alphabetically DESC\n  \n  This option works also on multiple selections at once.\n  \n  ## Split string lines to variable ##\n  \n  Just put the cursor between a string with multiple lines and this option will appear in the context menu.\n  It will split the string and for each line will be concatenated to a variable named \"str\".\n  This option works also on multiple selections at once.\n  \n  MIT License\n",
+			"settings":
+			{
+				"buffer_size": 7861,
+				"line_ending": "Unix",
+				"name": "Package Control Messages",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"contents": "\t\tfunction searchMovies(inputx) {\n\t\t\tvar title = movieTitle.val();\n\t\t\t// alert(\"You searched for: \" + title);\n\n\t\t\t// $.getJSON(\"https://api.themoviedb.org/3/search/movie?api_key=84c35b18ab46bd677eace379309dbadc&query=\" + title, function(json) {\n\t\t\t// \tconsole.log(json);\n\t\t\t// \tvar path = \"https://image.tmdb.org/t/p/w1280\"\n\t\t\t// \tvar url = json.results[0].poster_path;\n\t\t\t// \t$(\"#poster\").html(\"<img src=\\x22\" + path + url + \"\\x22>\");\n\n\t\t\t// });\n\n\t\t\t// var input:\"{\\\\\"text\\\\\":\\\\\"Turn up the ac\\\\\"}\";\n\t\t\tvar outputstring;\n\n\t\t\t$.ajax({\n\n\t\t\t  type: \"POST\",\n\t\t\t  url: \"https://watson-api-explorer.mybluemix.net/conversation/api/v1/workspaces/0a0c06c1-8e31-4655-9067-58fcac5134fc/message?version=2016-09-20\",\n\t\t\t  data: \"{}\",\n\t\t\t  success: function(result) {outputstring = result},\n\t\t\t  dataType: \"json\",\n\t\t\t  contentType: \"application/json\"\n\t\t\t});\n\n\n\t\t}\n\n\n\n\t\t\n\n// \"/lZpWprJqbIFpEV5uoHfoK0KCnTW.jpg\"\n\n\n// https://api.themoviedb.org/3/search/movie?api_key=84c35b18ab46bd677eace379309dbadc&query=Jack+Reacher\n\n// https://api.themoviedb.org/3/movie/550?api_key=84c35b18ab46bd677eace379309dbadc\n\n// http://www.flysfo.com/api/airlines.json?limit=20&key=fdd6daf6e3f4be4988fa16c3fec39793\n\n// fdd6daf6e3f4be4988fa16c3fec39793\n\n\n\n\n// $(document).ready(function() {\n//     $.ajax({\n//         url: \"http://rest-service.guides.spring.io/greeting\"\n//     }).then(function(data) {\n//        $('.greeting-id').append(data.id);\n//        $('.greeting-content').append(data.content);\n//     });\n\n// });\n\n// $(document).ready(function(){\n\n//    $('#term').focus(function(){\n//       var full = $(\"#poster\").has(\"img\").length ? true : false;\n//       if(full == false){\n//          $('#poster').empty();\n//       }\n//    });\n\n//    var getPoster = function(){\n\n//         var film = $('#term').val();\n\n//          if(film == ''){\n\n//             $('#poster').html(\"<h2 class='loading'>Ha! We haven't forgotten to validate the form! Please enter something.</h2>\");\n\n//          } else {\n\n//             $('#poster').html(\"<h2 class='loading'>Your poster is on its way!</h2>\");\n\n//             $.getJSON(\"https://api.themoviedb.org/3/movie/550?api_key=84c35b18ab46bd677eace379309dbadc/\" + film + \"?callback=?\", function(json) {\n//                if (json != \"Nothing found.\"){\n//                      $('#poster').html('<h2 class=\"loading\">Well, gee whiz! We found you a poster, skip!</h2><img id=\"thePoster\" src=' + json[0].posters[0].image.url + ' />');\n//                   } else {\n//                      $.getJSON(\"https://api.themoviedb.org/3/movie/550?api_key=84c35b18ab46bd677eace379309dbadc/goonies?callback=?\", function(json) {\n//                         console.log(json);\n//                         $('#poster').html('<h2 class=\"loading\">We are afraid nothing was found for that search. Perhaps you were looking for The Goonies?</h2><img id=\"thePoster\" src=' + json[0].posters[0].image.url + ' />');\n//                      });\n//                   }\n//              });\n\n//           }\n\n//         return false;\n//    }\n\n//    $('#search').click(getPoster);\n//    $('#term').keyup(function(event){\n//        if(event.keyCode == 13){\n//            getPoster();\n//        }\n//    });\n\n// });",
+			"settings":
+			{
+				"buffer_size": 3179,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -137,10 +273,22 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 267.0,
-		"last_filter": "scss",
+		"height": 359.0,
+		"last_filter": "rein",
 		"selected_items":
 		[
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
 			[
 				"scss",
 				"Set Syntax: SCSS"
@@ -156,10 +304,6 @@
 			[
 				"html",
 				"Set Syntax: HTML"
-			],
-			[
-				"rein",
-				"Indentation: Reindent Lines"
 			],
 			[
 				"indent",
@@ -180,10 +324,6 @@
 			[
 				"color",
 				"Color Picker: Insert Color"
-			],
-			[
-				"insta",
-				"Package Control: Install Package"
 			],
 			[
 				"install ",
@@ -210,7 +350,7 @@
 				"Set Syntax: JSON"
 			]
 		],
-		"width": 485.0
+		"width": 449.0
 	},
 	"console":
 	{
@@ -232,16 +372,19 @@
 	[
 		"/Users/ShazMac/Documents/Coding Space/Watson",
 		"/Users/ShazMac/Documents/Coding Space/Watson/assets",
+		"/Users/ShazMac/Documents/Coding Space/Watson/assets/css",
 		"/Users/ShazMac/Documents/Coding Space/Watson/assets/css/components",
+		"/Users/ShazMac/Documents/Coding Space/Watson/assets/css/core",
 		"/Users/ShazMac/Documents/Coding Space/Watson/assets/css/core/constants",
 		"/Users/ShazMac/Documents/Coding Space/Watson/Build",
-		"/Users/ShazMac/Documents/Coding Space/Watson/Build/assets",
-		"/Users/ShazMac/Documents/Coding Space/Watson/Build/assets/css",
 		"/Users/ShazMac/Documents/Coding Space/Watson/includes"
 	],
 	"file_history":
 	[
+		"/Users/ShazMac/Documents/Coding Space/Watson/assets/js/api.js",
 		"/Users/ShazMac/Documents/Coding Space/Watson/popup.html",
+		"/Users/ShazMac/Documents/Coding Space/Watson/index.html",
+		"/Users/ShazMac/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
 		"/Users/ShazMac/Documents/Coding Space/Watson/includes/_header.html",
 		"/Users/ShazMac/Documents/Coding Space/Watson/assets/css/core.scss",
 		"/Users/ShazMac/Documents/Coding Space/Watson/includes/_popup-header.html",
@@ -342,11 +485,41 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 7,
 			"sheets":
 			[
 				{
 					"buffer": 0,
+					"file": "includes/_header.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 579,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								579,
+								538
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
 					"file": "index.html",
 					"semi_transient": false,
 					"settings":
@@ -359,7 +532,7 @@
 						[
 							[
 								82,
-								82
+								57
 							]
 						],
 						"settings":
@@ -370,24 +543,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
+					"buffer": 2,
 					"file": "popup.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 220,
+						"buffer_size": 202,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								202,
+								202
 							]
 						],
 						"settings":
@@ -398,11 +571,69 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
+					"file": "includes/_popup-header.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 609,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								149,
+								149
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "includes/_nav.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 377,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								206,
+								206
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "includes/_sidebar.html",
 					"semi_transient": false,
 					"settings":
@@ -414,24 +645,25 @@
 						"selection":
 						[
 							[
-								635,
-								635
+								7,
+								7
 							]
 						],
 						"settings":
 						{
 							"auto_name": "",
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 6,
 					"file": "includes/_chat-header.html",
 					"semi_transient": false,
 					"settings":
@@ -456,35 +688,66 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 7,
 					"file": "includes/_chat-body.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1970,
+						"buffer_size": 1134,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1495,
-								1495
+								710,
+								710
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 238.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "Build/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2732,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -494,7 +757,7 @@
 			"sheets":
 			[
 				{
-					"buffer": 5,
+					"buffer": 9,
 					"file": "assets/css/style.scss",
 					"semi_transient": false,
 					"settings":
@@ -518,11 +781,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 10,
 					"file": "assets/css/components/_sidebar-flap.scss",
 					"semi_transient": false,
 					"settings":
@@ -546,11 +809,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 18,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 11,
 					"file": "assets/css/core/constants/_colors.scss",
 					"semi_transient": false,
 					"settings":
@@ -562,8 +825,8 @@
 						"selection":
 						[
 							[
-								8,
-								8
+								285,
+								285
 							]
 						],
 						"settings":
@@ -574,11 +837,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 12,
 					"file": "assets/css/components/_home.scss",
 					"semi_transient": false,
 					"settings":
@@ -602,11 +865,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 13,
 					"file": "assets/css/popup.scss",
 					"semi_transient": false,
 					"settings":
@@ -618,36 +881,41 @@
 						"selection":
 						[
 							[
-								262,
-								262
+								109,
+								109
+							],
+							[
+								232,
+								232
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 14,
 					"file": "assets/css/components/_conversation.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5519,
+						"buffer_size": 7162,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3794,
-								3794
+								6471,
+								6486
 							]
 						],
 						"settings":
@@ -657,14 +925,44 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 4022.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 15,
+					"file": "Build/assets/css/popup.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 22040,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								20207,
+								20207
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 1.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
 					"file": "assets/css/components/_conversation-alt.scss",
 					"semi_transient": false,
 					"settings":
@@ -682,13 +980,138 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 20,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 17,
+					"file": "Build/popup.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3496,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2437,
+								2437
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "assets/js/api.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7876,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								754,
+								754
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 215.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7861,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								655,
+								655
+							]
+						],
+						"settings":
+						{
+							"auto_indent": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"tab_width": 2,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3179,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3179,
+								3179
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 818.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
 					"type": "text"
 				}
 			]
@@ -716,18 +1139,25 @@
 				1,
 				0,
 				2,
-				1
+				2
+			],
+			[
+				0,
+				1,
+				1,
+				2
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.970326409496,
 			1.0
 		],
 		"rows":
 		[
 			0.0,
+			0.130129977876,
 			1.0
 		]
 	},
@@ -774,7 +1204,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 2,
 	"settings":
 	{
 	},
@@ -782,7 +1212,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 325.0,
+	"side_bar_width": 235.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

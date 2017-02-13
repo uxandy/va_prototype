@@ -14,6 +14,11 @@
 	var contextVA = {};
 	var resultVA = null;
 	var uInput = null;
+	var servTrigger = {};
+	var serialNumber = {};
+
+	var triggerValue = null;
+	var serialValue = null;
 
 	function init() {
 
@@ -28,7 +33,7 @@
 		});
 
 		// Need to find a way to merge both functions
-		$(document).keypress(function(e) {
+		$("#chatbox").keypress(function(e) {
 		    if(e.which == 13) {
 				// Grab what's in the text input box and store it as the value of text in an object
 				var chatText = $("#chatbox").val();
@@ -48,6 +53,8 @@
 		postVA(chatInput);
 
 	}
+
+	// name=“SerialNumber” 
 
 	function postVA(x) {
 
@@ -71,16 +78,63 @@
 		  	// Set the context based on what was received
 		  	contextVA = result.context;
 		  	// Fetch the output text from the returned array and pass it on to resultVA
-		  	resultVA = result.output.text[0];
+		  	// resultVA = result.output.text[0];
 
 		  	for (i = 0; i < result.output.text.length; i++) {
-		  		console.log(JSON.stringify(result.output.text[i]));
+		  		// console.log('Length of text array is:' + result.output.text.length);
+		  		// console.log(JSON.stringify(result.output.text[i]));
+		  		resultVA = result.output.text[i];
+		  		$(".chat").append('<div class="bubble you">' + resultVA + '</div>');
 		  	}
 
 		  	// Stringify the text and append it to element HTML
 		  	// $("#poster").html(JSON.stringify(resultVA));
 
-		  	$(".chat").append('<div class="bubble you">' + resultVA + '</div>');
+		  	// $(".chat").append('<div class="bubble you">' + resultVA + '</div>');
+		  	$(parseVA);
+		  	$('.chat').scrollTop($('.chat')[0].scrollHeight);
+
+		  },
+		  dataType: "json",
+		  contentType: "application/json"
+		});
+
+	}
+
+	function postArgVA(sn, st){
+		var watsonInput = {};
+
+		watsonInput["input"] = {text: "a"};
+		watsonInput["context"] = contextVA;
+
+		console.log('Serial and Trigger: ' + serialValue + ' and ' + triggerValue);
+
+		watsonInput.context["ServiceTrigger"] = triggerValue;
+		watsonInput.context["SerialNumber"] = serialValue;
+
+		console.log('Passing Serial and Trigger context:');
+		console.log(watsonInput);
+
+		$.ajax({
+		  type: "POST",
+		  url: apiURL,
+		  data: JSON.stringify(watsonInput),
+		  success: function(result) {
+		  	console.log("Received the following object back:");
+		  	console.log(result);
+
+		  	// Set the context based on what was received
+		  	contextVA = result.context;
+
+		  	for (i = 0; i < result.output.text.length; i++) {
+		  		resultVA = result.output.text[i];
+		  		$(".chat").append('<div class="bubble you">' + resultVA + '</div>');
+		  	}
+
+		  	// Stringify the text and append it to element HTML
+		  	// $("#poster").html(JSON.stringify(resultVA));
+
+		  	// $(".chat").append('<div class="bubble you">' + resultVA + '</div>');
 		  	$(parseVA);
 		  	$('.chat').scrollTop($('.chat')[0].scrollHeight);
 
@@ -96,6 +150,9 @@
 		// Parse input boxes
 		$("va\\:textbox").each(function(){
 		        $(this).replaceWith('<div class="input-field"><input id="' + $(this).attr("name") + '"placeholder="' + $(this).attr("prompt") + '"' + 'maxlength=' + $(this).attr("maxlength") + '></div>');
+		        triggerValue = $(this).attr("servicetrigger");
+		        servTrigger = {ServiceTrigger: $(this).attr("servicetrigger")};
+		        console.log('Service trigger captured:' + JSON.stringify(servTrigger));
 		    }
 		);
 
@@ -132,6 +189,19 @@
 			$(".chat").append('<div class="bubble me">' + v + '</div>');
 			$('.chat').scrollTop($('.chat')[0].scrollHeight);
 			$(postVA(vo));
+		});
+
+		$("#SerialNumber").keypress(function(e) {
+		    if(e.which == 13) {
+				// Grab what's in the text input box and store it as the value of text in an object
+				var snValue = $("#SerialNumber").val();
+				serialValue = snValue;
+				// var userInput = {text: $("#term").val()};
+				var snData = {SerialNumber: snValue};
+
+				postArgVA(snData, servTrigger);
+
+		    }
 		});
 
 	}
