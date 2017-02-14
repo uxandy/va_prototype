@@ -1,6 +1,7 @@
 // SIDEBAR SCSS
 @import "core";
 @import "components/conversation";
+@import "fonts/vafont";
 // @import "components/conversation-alt";
 
 section.chat-header {
@@ -16,6 +17,39 @@ section.chat-header {
 	.logo {
 		display: inline-block;
 		left: 0;
+
+	    position: relative;
+	    text-align: center;
+	    width: 100%;
+
+	    span.va-lenovo {
+		    color: #6f7170;
+		    font-size: 22px;
+		    left: 16px;
+		    position: absolute;
+		    top: 17px;
+	    }
+
+	    .va-circle {
+		    display: inline-block;
+		    height: 50px;
+		    left: 50%;
+		    position: absolute;
+		    width: 73px;
+
+		    span.va-logo {
+			    background: #ff6a00 none repeat scroll 0 0;
+			    border-radius: 50px;
+			    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+			    color: #fff;
+			    font-size: 50px;
+			    padding: 8px;
+			    position: relative;
+			    right: 40px;
+			    top: 11px;
+		    }
+	    }
+
 		img {
 			width: 40px;
 			margin-top: 4px;
@@ -32,6 +66,11 @@ section.chat-header {
 		display: inline-block;
 		right:0;
 		float: right;
+		
+		a {
+			color: #6f7170;
+		}
+
 		ul {
 			li {
 				list-style: none;
@@ -39,8 +78,11 @@ section.chat-header {
 				span.glyphicon {
 					font-size: 24px;
 				}
+				span {
+					font-size: 24px;
+				}
 				&.user-profile, &.user-settings {
-					padding:15px;
+					padding: 15px 15px 0 0;
 					box-sizing:border-box;
 				}
 			}

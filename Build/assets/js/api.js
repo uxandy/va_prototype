@@ -104,7 +104,7 @@
 	function postArgVA(sn, st){
 		var watsonInput = {};
 
-		watsonInput["input"] = {text: "a"};
+		watsonInput["input"] = {text: ""};
 		watsonInput["context"] = contextVA;
 
 		console.log('Serial and Trigger: ' + serialValue + ' and ' + triggerValue);
