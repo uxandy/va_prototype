@@ -85,7 +85,7 @@
 		  		// console.log('Length of text array is:' + result.output.text.length);
 		  		// console.log(JSON.stringify(result.output.text[i]));
 		  		resultVA = result.output.text[i];
-		  		
+
 		  		if (!resultVA) {
 		  			// DO NOTHING
 		  		} else {
@@ -171,7 +171,13 @@
 		// Parse simple input anchors
 		$("va\\:input").each(function(){
 		        $(this).replaceWith('<a href="#" class="comTest">' + $(this).html() + '</a>');
-		        $('.comTest').parent('li').addClass('commande');
+		        
+
+		        if ($(this).attr("type")== "survey") {
+		        	$(".comTest").addClass('survey-commande');
+		        } else {
+		        	$('.comTest').parent('li').addClass('commande');
+		        }
 		    }
 		);
 
@@ -199,6 +205,17 @@
 		$('.commande').click(function() {
 			// var v = $(this).html();
 			var x = $("a", this).text();
+			console.log('Command is :' + x);
+			var vo = {text: x};
+			$(".chat").append('<div class="bubble me">' + x + '</div>');
+			$('.chat').scrollTop($('.chat')[0].scrollHeight);
+			$(postVA(vo));
+		});
+
+		$('.survey-commande').click(function() {
+			// var v = $(this).html();
+			var x = $(this).text();
+			console.log('Survey command is :' + x);
 			var vo = {text: x};
 			$(".chat").append('<div class="bubble me">' + x + '</div>');
 			$('.chat').scrollTop($('.chat')[0].scrollHeight);
