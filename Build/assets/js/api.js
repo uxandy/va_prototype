@@ -19,6 +19,7 @@
 
 	var triggerValue = null;
 	var serialValue = null;
+	var ticketValue = null;
 
 	function init() {
 
@@ -101,16 +102,17 @@
 
 	}
 
-	function postArgVA(sn, st){
+	function postArgVA(inValue, stValue){
 		var watsonInput = {};
 
 		watsonInput["input"] = {text: ""};
 		watsonInput["context"] = contextVA;
 
-		console.log('Serial and Trigger: ' + serialValue + ' and ' + triggerValue);
+		console.log('Serial, Trigger and Ticket: ' + serialValue + ' and ' + triggerValue + ' and ' + ticketValue);
 
 		watsonInput.context["ServiceTrigger"] = triggerValue;
 		watsonInput.context["SerialNumber"] = serialValue;
+		watsonInput.context["TicketNumber"] = ticketValue;
 
 		console.log('Passing Serial and Trigger context:');
 		console.log(watsonInput);
@@ -178,7 +180,7 @@
 		$(".bubble ul").each(function() {
 			if (!$(this).hasClass('control-box')){
 				$(this).addClass('control-box');
-				$('.control-box').wrap('<div class="input-controls"></div>');
+				// $('.control-box').wrap('<div class="input-controls"></div>');
 			}
 		});
 
@@ -199,7 +201,21 @@
 				// var userInput = {text: $("#term").val()};
 				var snData = {SerialNumber: snValue};
 
-				postArgVA(snData, servTrigger);
+				postArgVA(snValue, triggerValue);
+
+		    }
+		});
+
+		$("#TicketNumber").keypress(function(e) {
+		    if(e.which == 13) {
+				// Grab what's in the text input box and store it as the value of text in an object
+				var tcValue = $("#TicketNumber").val();
+				ticketValue = tcValue;
+				// var snData = {SerialNumber: tcValue};
+
+				console.log('Captured ticket number: ' + tcValue);
+
+				postArgVA(tcValue, triggerValue);
 
 		    }
 		});
