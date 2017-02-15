@@ -85,7 +85,12 @@
 		  		// console.log('Length of text array is:' + result.output.text.length);
 		  		// console.log(JSON.stringify(result.output.text[i]));
 		  		resultVA = result.output.text[i];
-		  		$(".chat").append('<div class="bubble you">' + resultVA + '</div>');
+		  		
+		  		if (!resultVA) {
+		  			// DO NOTHING
+		  		} else {
+		  			$(".chat").append('<div class="bubble you">' + resultVA + '</div>');
+		  		}
 		  	}
 
 		  	// Stringify the text and append it to element HTML
@@ -130,7 +135,12 @@
 
 		  	for (i = 0; i < result.output.text.length; i++) {
 		  		resultVA = result.output.text[i];
-		  		$(".chat").append('<div class="bubble you">' + resultVA + '</div>');
+
+		  		if (!resultVA) {
+		  			// DO NOTHING
+		  		} else {
+		  			$(".chat").append('<div class="bubble you">' + resultVA + '</div>');
+		  		}
 		  	}
 
 		  	// Stringify the text and append it to element HTML
@@ -160,7 +170,8 @@
 
 		// Parse simple input anchors
 		$("va\\:input").each(function(){
-		        $(this).replaceWith('<a href="#" class="commande">' + $(this).html() + '</a>');
+		        $(this).replaceWith('<a href="#" class="comTest">' + $(this).html() + '</a>');
+		        $('.comTest').parent('li').addClass('commande');
 		    }
 		);
 
@@ -186,9 +197,10 @@
 
 
 		$('.commande').click(function() {
-			var v = $(this).html();
-			var vo = {text: v};
-			$(".chat").append('<div class="bubble me">' + v + '</div>');
+			// var v = $(this).html();
+			var x = $("a", this).text();
+			var vo = {text: x};
+			$(".chat").append('<div class="bubble me">' + x + '</div>');
 			$('.chat').scrollTop($('.chat')[0].scrollHeight);
 			$(postVA(vo));
 		});
