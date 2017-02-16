@@ -42,11 +42,17 @@ section.chat-header {
 			    border-radius: 50px;
 			    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
 			    color: #fff;
-			    font-size: 50px;
+			    // font-size: 50px;
 			    padding: 8px;
 			    position: relative;
 			    right: 40px;
-			    top: 11px;
+			    // top: 11px;
+
+			    font-size: 48px;
+			    top: 7px;
+			    width: 65px;
+			    height: 65px;
+			    display: inline-block;
 		    }
 	    }
 

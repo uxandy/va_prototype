@@ -434,10 +434,10 @@ html {
   box-shadow: 0 2px 4px -2px rgba(0, 0, 0, 0.4); }
   .bubble:before {
     position: absolute;
-    top: 19px;
     display: block;
     width: 8px;
     height: 6px;
+    bottom: 0px;
     content: '\00a0';
     transform: rotate(29deg) skew(-35deg); }
   .bubble:last-child {
@@ -450,7 +450,10 @@ html {
     max-width: 90%; }
     .bubble.you:before {
       left: -3px;
-      background-color: #fff; }
+      background-color: #fff;
+      width: 19px;
+      height: 16px;
+      transform: rotate(0deg) skew(-35deg); }
   .bubble.me {
     float: right;
     color: #fff;
@@ -459,7 +462,10 @@ html {
     max-width: 90%; }
     .bubble.me:before {
       right: -3px;
-      background-color: #3e8ddd; }
+      background-color: #3e8ddd;
+      width: 19px;
+      height: 15px;
+      transform: rotate(56deg) skew(-35deg); }
   .bubble .input-controls {
     margin-top: 10px; }
     .bubble .input-controls span {
@@ -710,11 +716,14 @@ section.chat-header {
         border-radius: 50px;
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
         color: #fff;
-        font-size: 50px;
         padding: 8px;
         position: relative;
         right: 40px;
-        top: 11px; }
+        font-size: 48px;
+        top: 7px;
+        width: 65px;
+        height: 65px;
+        display: inline-block; }
     section.chat-header .logo img {
       width: 40px;
       margin-top: 4px;
