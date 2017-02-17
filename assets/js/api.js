@@ -24,6 +24,12 @@
 
 	function init() {
 
+
+		d = new Date();
+		d.toLocaleTimeString();  // -> "7:38:05 AM"
+
+		$(".timestamp").html("Today, " + d.toLocaleTimeString());
+
 		// For now, capture on the click of a button, need to add ENTER key listener.
 		$("#search").click(function() {
 			// Grab what's in the text input box and store it as the value of text in an object

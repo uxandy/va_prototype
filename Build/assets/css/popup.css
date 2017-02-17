@@ -447,7 +447,10 @@ html {
     color: #555;
     background-color: #fff;
     align-self: flex-start;
-    max-width: 90%; }
+    max-width: 90%;
+    -webkit-animation-name: slideFromLeft;
+    -moz-animation-name: slideFromLeft;
+    animation-name: slideFromLeft; }
     .bubble.you:before {
       left: -3px;
       background-color: #fff;
@@ -459,7 +462,10 @@ html {
     color: #fff;
     background-color: #3e8ddd;
     align-self: flex-end;
-    max-width: 90%; }
+    max-width: 90%;
+    -webkit-animation-name: slideFromRight;
+    -moz-animation-name: slideFromRight;
+    animation-name: slideFromRight; }
     .bubble.me:before {
       right: -3px;
       background-color: #3e8ddd;
@@ -498,7 +504,8 @@ html {
       box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.52);
       list-style: outside none none;
       margin-top: 10px;
-      padding: 8px 12px; }
+      padding: 8px 12px;
+      cursor: pointer; }
       .bubble ul.control-box li:hover {
         background: #fafafa; }
 
@@ -530,36 +537,8 @@ html {
     color: #555;
     border: 0;
     outline: none;
-    margin-right: 60px;
+    margin-right: 40px;
     background: none; }
-  .write .write-link.attach:before {
-    display: inline-block;
-    float: left;
-    width: 20px;
-    height: 42px;
-    content: '';
-    background-image: url("http://s1.postimg.org/s5gfy283f/attachemnt.png");
-    background-repeat: no-repeat;
-    background-position: center; }
-  .write .write-link.smiley:before {
-    display: inline-block;
-    float: left;
-    width: 20px;
-    height: 42px;
-    content: '';
-    background-image: url("http://s14.postimg.org/q2ug83h7h/smiley.png");
-    background-repeat: no-repeat;
-    background-position: center; }
-  .write .write-link.send:before {
-    display: inline-block;
-    float: left;
-    width: 20px;
-    height: 42px;
-    margin-left: 11px;
-    content: '';
-    background-image: url("http://s30.postimg.org/nz9dho0pp/send.png");
-    background-repeat: no-repeat;
-    background-position: center; }
 
 .bubble ul {
   margin: 0px;
@@ -611,6 +590,14 @@ html {
   padding-top: 5px;
   position: absolute;
   width: 100%; }
+  .chat-input .write .chat-action {
+    text-decoration: none;
+    color: #6f7170;
+    position: relative;
+    top: 10px;
+    margin-left: 10px; }
+    .chat-input .write .chat-action span.va-paperplane, .chat-input .write .chat-action span.va-send {
+      font-size: 20px; }
 
 .input-field {
   border-top: 1px solid #f0f0f0;
@@ -642,6 +629,34 @@ html {
 .loading span:nth-child(3) {
   animation-delay: .4s; }
 
+@keyframes slideFromLeft {
+  0% {
+    margin-left: -200px;
+    opacity: 0; }
+  100% {
+    margin-left: 0;
+    opacity: 1; } }
+@-webkit-keyframes slideFromLeft {
+  0% {
+    margin-left: -200px;
+    opacity: 0; }
+  100% {
+    margin-left: 0;
+    opacity: 1; } }
+@keyframes slideFromRight {
+  0% {
+    margin-right: -200px;
+    opacity: 0; }
+  100% {
+    margin-right: 0;
+    opacity: 1; } }
+@-webkit-keyframes slideFromRight {
+  0% {
+    margin-right: -200px;
+    opacity: 0; }
+  100% {
+    margin-right: 0;
+    opacity: 1; } }
 @keyframes blink {
   0% {
     opacity: .2; }
@@ -718,7 +733,7 @@ section.chat-header {
         color: #fff;
         padding: 8px;
         position: relative;
-        right: 40px;
+        right: 37px;
         font-size: 48px;
         top: 7px;
         width: 65px;
