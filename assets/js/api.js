@@ -8,7 +8,8 @@
 	// var apiURL = "https://watson-api-explorer.mybluemix.net/conversation/api/v1/workspaces/0a0c06c1-8e31-4655-9067-58fcac5134fc/message?version=2016-09-20";
 	// lenovo-tech-support.mybluemix.net/conversation/api/v1/workspaces/{workspace_id}/message
 	// var apiURL = "https://lenovo-tech-support.mybluemix.net/rest/conversation/api/v1/workspaces/c6ff8ad5-2df9-4be2-bcd9-6d9fb1ad6529/message";
-	var apiURL = "https://lenovo-tech-support.mybluemix.net/conversation/api/v1/workspaces/{workspace_id}/message";
+	// var apiURL = "https://lenovo-tech-support.mybluemix.net/conversation/api/v1/workspaces/{workspace_id}/message";
+	var apiURL = "https://lenovo-vap.mybluemix.net/conversation/api/v1/workspaces/88df73e4-778f-4e55-8cf0-a691ee928d7b/message";
 	var dataInit = {};
 	var dataInit = {};
 	var contextVA = {};
