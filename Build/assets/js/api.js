@@ -4,20 +4,10 @@
 
 	$(parseVA);
 
-	// http://lenovo-tech-support.mybluemix.net/rest/conversation/api/v1/workspaces/c6ff8ad5-2df9-4be2-bcd9-6d9fb1ad6529/message
-	// var apiURL = "https://watson-api-explorer.mybluemix.net/conversation/api/v1/workspaces/0a0c06c1-8e31-4655-9067-58fcac5134fc/message?version=2016-09-20";
-	// lenovo-tech-support.mybluemix.net/conversation/api/v1/workspaces/{workspace_id}/message
-	// var apiURL = "https://lenovo-tech-support.mybluemix.net/rest/conversation/api/v1/workspaces/c6ff8ad5-2df9-4be2-bcd9-6d9fb1ad6529/message";
-	// var apiURL = "https://lenovo-tech-support.mybluemix.net/conversation/api/v1/workspaces/{workspace_id}/message";
 	var apiURL = "https://lenovo-vap.mybluemix.net/conversation/api/v1/workspaces/88df73e4-778f-4e55-8cf0-a691ee928d7b/message";
-	var dataInit = {};
-	var dataInit = {};
 	var contextVA = {};
 	var resultVA = null;
-	var uInput = null;
 	var servTrigger = {};
-	var serialNumber = {};
-
 	var triggerValue = null;
 	var serialValue = null;
 	var ticketValue = null;
@@ -26,7 +16,7 @@
 
 
 		d = new Date();
-		d.toLocaleTimeString();  // -> "7:38:05 AM"
+		d.toLocaleTimeString();
 
 		$(".timestamp").html("Today, " + d.toLocaleTimeString());
 
@@ -36,7 +26,6 @@
 			var userInput = {text: $("#term").val()};
 			var chatInput = {text: $("#chatbox").val()};
 			// Pass it on to the PostVA method to get a response
-			// postVA(userInput);
 			postVA(chatInput);
 		});
 
@@ -62,8 +51,6 @@
 
 	}
 
-	// name=“SerialNumber” 
-
 	function postVA(x) {
 
 		var watsonInput = {};
@@ -86,11 +73,9 @@
 		  	// Set the context based on what was received
 		  	contextVA = result.context;
 		  	// Fetch the output text from the returned array and pass it on to resultVA
-		  	// resultVA = result.output.text[0];
 
 		  	for (i = 0; i < result.output.text.length; i++) {
-		  		// console.log('Length of text array is:' + result.output.text.length);
-		  		// console.log(JSON.stringify(result.output.text[i]));
+		  		// Loop through the entire text array and output.
 		  		resultVA = result.output.text[i];
 
 		  		if (!resultVA) {
@@ -100,10 +85,6 @@
 		  		}
 		  	}
 
-		  	// Stringify the text and append it to element HTML
-		  	// $("#poster").html(JSON.stringify(resultVA));
-
-		  	// $(".chat").append('<div class="bubble you">' + resultVA + '</div>');
 		  	$(parseVA);
 		  	$('.chat').scrollTop($('.chat')[0].scrollHeight);
 
@@ -150,10 +131,6 @@
 		  		}
 		  	}
 
-		  	// Stringify the text and append it to element HTML
-		  	// $("#poster").html(JSON.stringify(resultVA));
-
-		  	// $(".chat").append('<div class="bubble you">' + resultVA + '</div>');
 		  	$(parseVA);
 		  	$('.chat').scrollTop($('.chat')[0].scrollHeight);
 
@@ -177,13 +154,11 @@
 
 		// Parse simple input anchors
 		$("va\\:input").each(function(){
-		        $(this).replaceWith('<a href="#" class="comTest">' + $(this).html() + '</a>');
-		        
-
+		        $(this).replaceWith('<a href="#" class="comm-hook">' + $(this).html() + '</a>');
 		        if ($(this).attr("type")== "survey") {
-		        	$(".comTest").addClass('survey-commande');
+		        	$(".comm-hook").addClass('survey-commande');
 		        } else {
-		        	$('.comTest').parent('li').addClass('commande');
+		        	$('.comm-hook').parent('li').addClass('commande');
 		        }
 		    }
 		);
@@ -292,6 +267,11 @@ $( document ).ajaxStart(function() {
 //| AJAX LOADING INDICATOR AT THE TOP VS. IN CHAT BODY
 // --------------------------------------------------------------------------------
 
+// http://lenovo-tech-support.mybluemix.net/rest/conversation/api/v1/workspaces/c6ff8ad5-2df9-4be2-bcd9-6d9fb1ad6529/message
+// var apiURL = "https://watson-api-explorer.mybluemix.net/conversation/api/v1/workspaces/0a0c06c1-8e31-4655-9067-58fcac5134fc/message?version=2016-09-20";
+// lenovo-tech-support.mybluemix.net/conversation/api/v1/workspaces/{workspace_id}/message
+// var apiURL = "https://lenovo-tech-support.mybluemix.net/rest/conversation/api/v1/workspaces/c6ff8ad5-2df9-4be2-bcd9-6d9fb1ad6529/message";
+// var apiURL = "https://lenovo-tech-support.mybluemix.net/conversation/api/v1/workspaces/{workspace_id}/message";
 
 
 

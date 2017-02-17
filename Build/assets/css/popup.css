@@ -524,22 +524,6 @@ html {
   .chat.active-chat {
     display: inline-block; }
 
-.write {
-  height: 42px;
-  left: 30px;
-  padding-left: 8px; }
-  .write input {
-    font-size: 16px;
-    float: left;
-    width: 306px;
-    height: 40px;
-    padding: 0 10px;
-    color: #555;
-    border: 0;
-    outline: none;
-    margin-right: 40px;
-    background: none; }
-
 .bubble ul {
   margin: 0px;
   padding: 0px;
@@ -565,11 +549,10 @@ html {
   margin-top: 10px;
   width: 100px;
   height: 100px; }
-
-.thumb1 a {
-  display: block;
-  width: 100px;
-  height: 100px; }
+  .thumb1 > a {
+    display: block;
+    width: 100px;
+    height: 100px; }
 
 .chat-body {
   height: 100vh;
@@ -590,14 +573,35 @@ html {
   padding-top: 5px;
   position: absolute;
   width: 100%; }
-  .chat-input .write .chat-action {
-    text-decoration: none;
-    color: #6f7170;
-    position: relative;
-    top: 10px;
-    margin-left: 10px; }
-    .chat-input .write .chat-action span.va-paperplane, .chat-input .write .chat-action span.va-send {
-      font-size: 20px; }
+  .chat-input .write {
+    height: 42px;
+    left: 30px;
+    padding-left: 8px; }
+    .chat-input .write input {
+      font-size: 16px;
+      float: left;
+      height: 40px;
+      padding: 0 10px;
+      color: #555;
+      border: 0;
+      outline: none;
+      margin-right: 40px;
+      background: none;
+      width: 100%;
+      padding-right: 90px;
+      display: inline-block;
+      box-sizing: border-box; }
+    .chat-input .write .chat-action-container {
+      position: absolute;
+      right: 6px; }
+      .chat-input .write .chat-action-container .chat-action {
+        text-decoration: none;
+        color: #6f7170;
+        position: relative;
+        top: 10px;
+        margin-right: 10px; }
+        .chat-input .write .chat-action-container .chat-action span.va-paperplane, .chat-input .write .chat-action-container .chat-action span.va-send {
+          font-size: 20px; }
 
 .input-field {
   border-top: 1px solid #f0f0f0;
@@ -607,27 +611,24 @@ html {
 
 .loading {
   font-size: 38px; }
-
-.loading span {
-  font-size: 80px;
-  animation-name: blink;
-  animation-duration: 1.4s;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
-  display: block;
-  height: 26px;
-  margin: 0;
-  padding: 0;
-  line-height: 0;
-  float: left;
-  position: relative;
-  bottom: 6px; }
-
-.loading span:nth-child(2) {
-  animation-delay: .2s; }
-
-.loading span:nth-child(3) {
-  animation-delay: .4s; }
+  .loading span {
+    font-size: 80px;
+    animation-name: blink;
+    animation-duration: 1.4s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    display: block;
+    height: 26px;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    float: left;
+    position: relative;
+    bottom: 6px; }
+    .loading span:nth-child(2) {
+      animation-delay: .2s; }
+    .loading span:nth-child(3) {
+      animation-delay: .4s; }
 
 @keyframes slideFromLeft {
   0% {

@@ -32,7 +32,6 @@ $white: #fff;
 $light: #999;
 $dark: #555;
 
-
 .bubble {
     font-size: 16px;
     position: relative;
@@ -43,9 +42,9 @@ $dark: #555;
     vertical-align: top;
     border-radius: 5px;
     box-shadow: 0 2px 4px -2px rgba(0,0,0,0.4);
+
     &:before {
         position: absolute;
-        // top: 19px;
         display: block;
         width: 8px;
         height: 6px;
@@ -53,9 +52,11 @@ $dark: #555;
         content: '\00a0';
         transform: rotate(29deg) skew(-35deg);
     }
+
     &:last-child {
         margin-bottom: 25px;
     }
+    
     &.you {
         float: left;
         color: $dark;
@@ -66,14 +67,12 @@ $dark: #555;
         &:before {
             left: -3px;
             background-color: #fff;
-
             width: 19px;
             height: 16px;
             transform: rotate(0deg) skew(-35deg);
-
-
         }
     }
+
     &.me {
         float: right;
         color: $white;
@@ -81,20 +80,17 @@ $dark: #555;
         align-self: flex-end;
         max-width: 90%;
         @include animation-name(slideFromRight);
+
         &:before {
             right: -3px;
             background-color: $blue;
-
-            // top: 33px;
             width: 19px;
             height: 15px;
             transform: rotate(56deg) skew(-35deg);
         }
     }
 
-
     .input-controls {
-        // border-top:1px solid #d0d0d0;
         margin-top: 10px;
 
         span {
@@ -103,18 +99,13 @@ $dark: #555;
             width:100%;
             padding-top:10px;
         }
+
         ul {
             margin:0;
             padding: 0;
-            // padding-top:5px;
             padding: 5px 0;
-            li {
-                // list-style: none;
-                // border:1px solid $blue;
-                // border-radius: 4px;
-                // margin-top:10px;
-                // padding:8px;
 
+            li {
                 background: #f5f5f5 none repeat scroll 0 0;
                 border: medium none;
                 border-radius: 4px;
@@ -133,15 +124,9 @@ $dark: #555;
     ul.control-box {
         margin:0;
         padding: 0;
-        // padding-top:5px;
         padding: 5px 0;
-        li {
-            // list-style: none;
-            // border:1px solid $blue;
-            // border-radius: 4px;
-            // margin-top:10px;
-            // padding:8px;
 
+        li {
             background: #f5f5f5 none repeat scroll 0 0;
             border: medium none;
             border-radius: 4px;
@@ -163,66 +148,26 @@ $dark: #555;
 .chat {
     position: relative;
     display: none;
-    // overflow: hidden;
     overflow-y:scroll;
     overflow-x:hidden;
-    // padding: 0 35px 92px;
-    // border-width: 1px 1px 1px 0;
-    // border-style: solid;
-    // border-color: $light;
     border: none;
     height: calc(100% - 48px);
-    // justify-content: flex-end;
-    // flex-direction: column;
-
     padding: 80px 20px 40px;
     width:100%;
-    // height: 600px;
-
-
-    // height: 694px;
     height: 100%;
     margin-bottom: -8px;
     background: #f0f0f0;
     &.active-chat {
-        // display: block;
-        // display: flex;
         display: inline-block;
+
         .bubble {
             // @include transition-timing-function(cubic-bezier(.4,-.04, 1, 1));
             @for $i from 1 through 10 {
                 &:nth-of-type(#{$i}) {
-                    // @include animation-duration(.15s *$i);
+                    // @include animation-duration(.05s *$i);
                 }
             }
         }
-    }
-}
-
-
-.write {
-    // background-color: #eceff1;
-    // border: 1px solid #999;
-    // border-radius: 5px;
-    height: 42px;
-    left: 30px;
-    // margin: auto 20px;
-    padding-left: 8px;
-    // width: 400px;
-    input {
-        font-size: 16px;
-        float: left;
-        width: 306px;
-        height: 40px;
-        padding: 0 10px;
-        color: $dark;
-        border: 0;
-        outline: none;
-        margin-right: 40px;
-        // background-color: #eceff1;
-
-        background: none;
-        // @include font;
     }
 }
 
@@ -239,7 +184,6 @@ $dark: #555;
 }
 
 .img-wrapper {
-    // height: 100px;
     width: 150px;
     display: inline-block;
     background: #f0f0f0;
@@ -253,7 +197,6 @@ $dark: #555;
 
 
 .thumb1 { 
-// background: url(blah.jpg) 50% 50% no-repeat; /* 50% 50% centers image in div */
     background-position: 50%;
     background-size: 100%;
     background-color: #f0f0f0;
@@ -262,13 +205,14 @@ $dark: #555;
     margin-top:10px;
     width: 100px;
     height: 100px;
+
+    > a {
+        display: block;
+        width: 100px;
+        height: 100px;
+    }
 }
 
-.thumb1 a {
-display: block;
-width: 100px;
-height: 100px;
-}
 
 .chat-body {
     height: 100vh;
@@ -293,18 +237,42 @@ height: 100px;
     width: 100%;
 
     .write {
-        .chat-action {
-            text-decoration: none;
-            color: #6f7170;
-            position: relative;
-            top: 10px;
-            margin-left: 10px;
-            span {
-                &.va-paperplane, &.va-send {
-                    font-size:20px;
+        height: 42px;
+        left: 30px;
+        padding-left: 8px;
+
+        input {
+            font-size: 16px;
+            float: left;
+            height: 40px;
+            padding: 0 10px;
+            color: $dark;
+            border: 0;
+            outline: none;
+            margin-right: 40px;
+            background: none;
+            width:100%;
+            padding-right: 90px;
+            display: inline-block;
+            box-sizing:border-box;
+        }
+
+        .chat-action-container {
+            position: absolute;
+            right: 6px;
+
+            .chat-action {
+                text-decoration: none;
+                color: #6f7170;
+                position: relative;
+                top: 10px;
+                margin-right: 10px;
+                span {
+                    &.va-paperplane, &.va-send {
+                        font-size:20px;
+                    }
                 }
             }
-
         }
     }
 }
@@ -319,9 +287,8 @@ height: 100px;
 
 .loading {
   font-size: 38px;
-}
 
-.loading span {
+  span {
     font-size: 80px;
     animation-name: blink;
     animation-duration: 1.4s;
@@ -335,15 +302,17 @@ height: 100px;
     float: left;
     position: relative;
     bottom: 6px;
+
+    &:nth-child(2) {
+        animation-delay: .2s;
+    }
+
+    &:nth-child(3) {
+        animation-delay: .4s;
+    }
+  }
 }
 
-.loading span:nth-child(2) {
-  animation-delay: .2s;
-}
-
-.loading span:nth-child(3) {
-  animation-delay: .4s;
-}
 
 @keyframes slideFromLeft {
     0% {
