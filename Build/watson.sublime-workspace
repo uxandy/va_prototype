@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"pos",
+				"position"
+			],
+			[
+				"survey",
+				"survey-commande"
+			],
+			[
 				"serial",
 				"serialValue"
 			],
@@ -131,21 +139,16 @@
 			}
 		},
 		{
-			"contents": "<div class=\"right\">\n\n\t<div class=\"chat active-chat\">\n\t\t<div class=\"conversation-start\">\n\t\t\t<span>Today, 5:38 PM</span>\n\t\t</div>\n\n<!-- \t\t<div class=\"bubble you\">\n\t\t\tHello, this is a watson api test... ask me something\n\n\t\t\t<br>\n\t\t\tEnter a serial number:\n\n\t\t\t<va:textbox\n\t\t\tname=\"SerialNumber\"\n\t\t\tservicetrigger=\"Warranty\"\n\t\t\tprompt=\"Enter Serial Number\"\n\t\t\tmaxlength=\"8\">\n\t\t\t</va:textbox>\n\t\t</div>\n\n\t\t<div class=\"bubble you\">\n\t\t\tQuestion with answers:\n\n\t\t\t<va:input>Yes</va:input>\n\t\t\t<va:input>No</va:input>\n\t\t</div>\n\n\t\t<div class=\"bubble you\">\n\t\t\tPlease refer to this Knowledge Base article:\n\t\t\t<va:link href=http://support.lenovo.com/us/en/find-product-name>How to Find my Serial Number</va:link>\n\t\t</div> -->\n\n\t\t\n\t</div>\n</div>\n\n<div class=\"chat-input\">\n\t<div class=\"write\">\n\t\t<!-- <a href=\"javascript:;\" class=\"write-link attach\"></a> -->\n\t\t<input id=\"chatbox\" type=\"text\" placeholder=\"Type here to chat with the virtual agent...\">\n\t\t<a href=\"javascript:;\" class=\"write-link smiley\"></a>\n\t\t<a href=\"javascript:;\" class=\"write-link send\"></a>\n\t</div>\n</div>\n\n\n\n<script>\n\t$('.chat').scrollTop($('.chat')[0].scrollHeight);\n</script>\n\n\n",
 			"file": "includes/_chat-body.html",
-			"file_size": 1134,
-			"file_write_time": 131309571550000000,
 			"settings":
 			{
-				"buffer_size": 1134,
+				"buffer_size": 1271,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "<!DOCTYPE html>\n<html>\n\n<head>\n\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  \n  \n        <!-- Hammer reload -->\n          <script>\n            setInterval(function(){\n              try {\n                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}\n                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')\n                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}\n                window.onbeforeunload = function() { ws = null }\n                ws.onmessage = function(){\n                  var links = document.getElementsByTagName('link');\n                    for (var i = 0; i < links.length;i++) {\n                    var link = links[i];\n                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) {\n                      href = link.href.replace(/((&|\\?)hammer=)[^&]+/,'');\n                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());\n                    }\n                  }\n                }\n              }catch(e){}\n            }, 1000)\n          </script>\n        <!-- /Hammer reload -->\n      \n  \n  <link rel='stylesheet' href='assets/css/normalize.css'>\n<link rel='stylesheet' href='assets/css/style.css'>\n  <link rel='stylesheet' href='assets/css/bootstrap-style.css'>\n  <link rel='stylesheet' href='assets/css/core.css'>\n  <script src='assets/js/jquery-1.8.3.min.js'></script>\n<script src='assets/js/app.js'></script>\n  <script src='assets/js/api.js'></script>\n  \n  <link href=\"assets/favicon.ico\" rel=\"shortcut icon\">\n  <link href=\"assets/apple-touch-icon.png\" rel=\"apple-touch-icon\">\n  \n  <title>VA PROJECT</title>\n  \n</head>\n\n<body>\n\n  <!-- <header> -->\n\n  <!-- </header> -->\n\n<!-- Side bar tab -->\n\n<div class=\"sidebar-flap\">\n\t<ul>\n\n\t\t<li class=\"feedback\">\n\n\t\t\t<div class=\"flap-text\">\n\t\t\t\t<span class=\"flap-label\">Feedback</span>\n\t\t\t</div>\n\t\t\t<div class=\"flap-icon\">\n\t\t\t\t<span class=\"glyphicon glyphicon-bullhorn\" aria-hidden=\"true\"></span>\n\t\t\t</div>\n\t\t</li>\n\n\n\t\t<li class=\"contact-us\">\n\n\t\t\t<div class=\"flap-text\">\n\t\t\t\t<span class=\"flap-label\">Contact Us</span>\n\t\t\t</div>\n\t\t\t<div class=\"flap-icon\">\n\t\t\t\t<span class=\"glyphicon glyphicon-globe\" aria-hidden=\"true\"></span>\n\t\t\t</div>\n\t\t</li>\n\n\n\t\t<a href=\"javascript:void(0);\" onclick=\"window.open('popup.html', '_blank', 'resizable=0,width=440,height=780,menubar=no');\">\n\t\t\t<li class=\"virtual-agent\">\n\n\t\t\t\t<div class=\"flap-text\">\n\t\t\t\t\t<span class=\"flap-label\">Virtual Agent</span>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"flap-icon\">\n\t\t\t\t\t<span class=\"glyphicon glyphicon-user\" aria-hidden=\"true\"></span>\n\t\t\t\t</div>\n\t\t\t</li>\n\t\t</a>\n\t</ul>\n</div>\n  \n</body>\n\n</html>",
 			"file": "Build/index.html",
-			"file_size": 2732,
-			"file_write_time": 131303915240000000,
 			"settings":
 			{
 				"buffer_size": 2732,
@@ -192,7 +195,7 @@
 			"file": "assets/css/popup.scss",
 			"settings":
 			{
-				"buffer_size": 1488,
+				"buffer_size": 1607,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -201,7 +204,7 @@
 			"file": "assets/css/components/_conversation.scss",
 			"settings":
 			{
-				"buffer_size": 7162,
+				"buffer_size": 7036,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -228,27 +231,25 @@
 			"file": "assets/js/api.js",
 			"settings":
 			{
-				"buffer_size": 7883,
+				"buffer_size": 8703,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "Package Control Messages\n========================\n\nJavaScript Completions\n----------------------\n\n  JavaScript Completions Package\n  ===============================\n  \n  How To USE\n  ==========\n  \n  To try it, just write.\n  \n  If you like this plugin, \"Star\" it on ---> https://github.com/pichillilorenzo/JavaScript-Completions <---\n  \n  jQuery and NativeScript completions disabled by default!\n  You can enable them on Preferences -> Package Settings -> JavaScript Completions.\n  \n  Some features could use npm!\n  \n  In Windows you must install it! Download it from https://nodejs.org.\n  To OSX and Linux, it will be downloaded automatically with nodejs.\n  \n  Features list:\n  - \"Find JavaScript Description\" Feature\n  - \"On Hover Description\" Feature\n  - \"Evaluate JavaScript\" Feature\n  - \"Can I use?\" Feature\n  - \"JSDoc\" Feature\n  - Context menu options\n  \n  \n  ENABLE or DISABLE completions\n  =============================\n  \n  You can ENABLE or DISABLE completions! Just go to Preferences -> Package Settings -> JavaScript Completions\n  \n  \n  \"Find JavaScript Description\" Feature\n  =====================================\n  \n  -- Supported only by Sublime Text 3 --\n  \n  key-map of this feature disabled by default!\n  \n  You can check the description of function/property/method by selecting the word (or, in case, it will take the first word near the blinking cursor) you want find. \n  \"right-click\" on your mouse and click on \"Find JavaScript Description\".\n  It will show a popup with the list of possible descriptions or, in some case, the direct description. \n  \n  In case, you can also use \"key-map\"! Just go to Preferences -> Package Settings -> JavaScript Completions and enable it.\n  \n  \"On Hover Description\" Feature\n  ==============================\n  \n  Supported only by Sublime Text 3, Build >= 3124\n  \n  Just put the cursor over a name of a function, property or constructor and it will appear a little popup with all matching found from the \"/sublime-completions\" list enabled. \n  \n  - F = function\n  - P = property\n  - C = constructor\n  \n  \n  \"Evaluate JavaScript\" Feature\n  =============================\n  \n  -- Supported only by Sublime Text 3 --\n  \n  This feature uses node.js (v6.6.0) executable.\n  You can change the node version on Preferences -> Package Settings -> Evaluate JavaScript settings\n  \n  It will download automaticaly the binary for your OS.\n  A message will appear on the \"status bar\" of Sublime Text.\n  \n  context menu option of this feature disabled by default!\n  key-map of this feature disabled by default!\n  \n  You can evaluate the entire text selection or the current line! \n  If you select a text region and evaluate it, in the gutter of the editor will appear 2 white dots.\n  The first white dot represents the start of the region and the second white dot represents the end of the region.\n  You can eventually modify the region and, without reselect the same region, you can evaluate it again! \n  If you want hide this 2 dots, there is an entry on the context menu \"Evaluate JavaScript\".\n  \n  When you evaluate code, this plugin will prepend \"use strict\"; automaticaly!\n  \n  There are two main mode to evaluate code:\n  - eval, https://nodejs.org/dist/latest-v6.x/docs/api/cli.html#cli_e_eval_script\n  - print, https://nodejs.org/dist/latest-v6.x/docs/api/cli.html#cli_p_print_script\n  \n  To enable this feature on context menu, go to Preferences -> Package Settings -> Evaluate JavaScript and enable it.\n  In case, you can also use \"key-map\"! Just go to Preferences -> Package Settings -> Evaluate JavaScript and enable it.\n  \n  \n  \"Can I use?\" Feature\n  ====================\n  \n  Supported only by Sublime Text 3, Build >= 3124\n  \n  This feature uses \"can i use\" json data from this repository: https://github.com/Fyrd/caniuse, that contains raw data from the http://caniuse.com support tables.\n  Thanks to @Fyrd.\n  \n  You can use this feature in HTML, CSS and JavaScript context!\n  Just put the cursor on the word you want to check, \"right-click\" -> \"Can I use?\" and it will appear an input panel with all items that have a name matching with the word.\n  You can use key-map: ctrl+alt+w. You can also change it. Just go to Preferences -> Package Settings ->  JavaScript Completions Tools -> Key Bindings - User.\n  After selecting an item from the list, it will appear a popup with all information from the http://caniuse.com support tables.\n  You can also use the menu \"JavaScript Completions Tools\" on the top and select 'Search on \"Can I use\" list' to search what you want.\n  \n  \n  \"JSDoc\" Feature\n  ===============\n  \n  Supported only by Sublime Text 3\n  \n  Requires npm\n  \n  This feature uses https://github.com/jsdoc3/jsdoc to generate API documentation.\n  \n  You can find it under \"JavaScript Completions Tools\" menu -> JSDoc.\n  \n  There are 2 main menu items:\n  - Generate Documentation\n  - Add jsdoc-settings.json to the current project folder\n  \n  These items can be used only with a project folder opened.\n  \"Generate Documentation\" uses the jsdoc command line to generate documentation.\n  It uses jsdoc-settings.json file for configuration or, alternately, it will use default configuration.\n  The options (with default values) availables are:\n  {\n    \"jsdoc_conf_file\": \"conf.json\",\n    \"destination_folder\": \"out\",\n    \"display_symbols_access_property\": \"all\",\n    \"search_within_subdirectories\": false,\n    \"encoding_when_reading_all_source_files\": \"utf-8\",\n    \"template_path\": \"\",\n    \"tutorials_path\": \"\",\n    \"include_symbols_marked_with_the_private_tag\": false,\n    \"pedantic_mode\": false,\n    \"query_string_to_parse_and_store_in_global_variable\": \"\"\n  }\n  \n  \"Add jsdoc-settings.json to the current project folder\" will add a jsdoc-settings.json file with default values to the current project folder.\n  \n  How to use JSDoc: http://usejsdoc.org/\n  \n  \n  Context menu options\n  ====================\n  \n  Context menu options:\n  - Surround With\n  - Delete Surrounded\n  - Create Class from object literal\n  - Sort array\n  - Split string lines to variable\n  \n  ## Surround With ##\n  \n  You MUST first select text to \"enable\" these options.\n  \n  You can surround code with:\n  - if statement\n  - if else statement (this works only if you selected 2 regions)\n  - while statement\n  - do while statement\n  - for statement\n  - try catch statement\n  - try catch finally statement\n  - Multi-line comment\n  - Single-line comment\n  \n  This option works also on multiple selections at once.\n  \n  ## Delete Surrounded ##\n  \n  Options are:\n  - Delete multi-line comment\n  - Delete single-line comment\n  - Strip quoted string\n  \n  This option works also on multiple selections at once.\n  \n  ## Create Class from object literal ##\n  \n  This option create a JavaScript Class from an object literal (Constructor with all setter and getter for each field).\n  You can set default values or use the string \"required\" to say that a field hasn't a default value.\n  To work properly, you MUST declare a variable and assign an object literal to it, like this example:\n  \n  var Person = {\n    name: \"required\",\n    surname: \"required\",\n    email: \"\",\n    age: 18\n  }\n  \n  This option works also on multiple selections at once.\n  \n  ## Sort array ##\n  \n  Just put the cursor between brackets and will appear a menu with these options:\n  - Sort array ASC ( compare function: function(x,y){return x-y;} )\n  - Sort array DESC ( compare function: function(x,y){return y-x;} )\n  - Sort array alphabetically ASC\n  - Sort array alphabetically DESC\n  \n  This option works also on multiple selections at once.\n  \n  ## Split string lines to variable ##\n  \n  Just put the cursor between a string with multiple lines and this option will appear in the context menu.\n  It will split the string and for each line will be concatenated to a variable named \"str\".\n  This option works also on multiple selections at once.\n  \n  MIT License\n",
+			"contents": "section.chat-header .logo {\n    display: inline-block;\n    left: 0;\n    position: relative;\n    text-align: center;\n    width: 100%;\n}\n\nsection.chat-header .logo .va-circle {\n    display: inline-block;\n    height: 50px;\n    left: 50%;\n    position: absolute;\n    width: 73px;\n}\n\nsection.chat-header .logo .va-circle span.va-logo {\n    background: #ff6a00 none repeat scroll 0 0;\n    border-radius: 40px;\n    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);\n    color: #fff;\n    font-size: 48px;\n    padding: 8px;\n    position: relative;\n    right: 40px;\n    top: 7px;\n    width: 65px;\n    height: 65px;\n    display: inline-block;\n}\n\n.bubble:before {\n    position: absolute;\n    top: 33px;\n    display: block;\n    width: 19px;\n    height: 15px;\n    content: '\\00a0';\n    transform: rotate(56deg) skew(-35deg);\n}\n\n",
 			"settings":
 			{
-				"buffer_size": 7861,
+				"buffer_size": 805,
 				"line_ending": "Unix",
-				"name": "Package Control Messages",
-				"read_only": true,
-				"scratch": true
+				"name": "section.chat-header .logo {"
 			}
 		},
 		{
-			"contents": "\t\tfunction searchMovies(inputx) {\n\t\t\tvar title = movieTitle.val();\n\t\t\t// alert(\"You searched for: \" + title);\n\n\t\t\t// $.getJSON(\"https://api.themoviedb.org/3/search/movie?api_key=84c35b18ab46bd677eace379309dbadc&query=\" + title, function(json) {\n\t\t\t// \tconsole.log(json);\n\t\t\t// \tvar path = \"https://image.tmdb.org/t/p/w1280\"\n\t\t\t// \tvar url = json.results[0].poster_path;\n\t\t\t// \t$(\"#poster\").html(\"<img src=\\x22\" + path + url + \"\\x22>\");\n\n\t\t\t// });\n\n\t\t\t// var input:\"{\\\\\"text\\\\\":\\\\\"Turn up the ac\\\\\"}\";\n\t\t\tvar outputstring;\n\n\t\t\t$.ajax({\n\n\t\t\t  type: \"POST\",\n\t\t\t  url: \"https://watson-api-explorer.mybluemix.net/conversation/api/v1/workspaces/0a0c06c1-8e31-4655-9067-58fcac5134fc/message?version=2016-09-20\",\n\t\t\t  data: \"{}\",\n\t\t\t  success: function(result) {outputstring = result},\n\t\t\t  dataType: \"json\",\n\t\t\t  contentType: \"application/json\"\n\t\t\t});\n\n\n\t\t}\n\n\n\n\t\t\n\n// \"/lZpWprJqbIFpEV5uoHfoK0KCnTW.jpg\"\n\n\n// https://api.themoviedb.org/3/search/movie?api_key=84c35b18ab46bd677eace379309dbadc&query=Jack+Reacher\n\n// https://api.themoviedb.org/3/movie/550?api_key=84c35b18ab46bd677eace379309dbadc\n\n// http://www.flysfo.com/api/airlines.json?limit=20&key=fdd6daf6e3f4be4988fa16c3fec39793\n\n// fdd6daf6e3f4be4988fa16c3fec39793\n\n\n\n\n// $(document).ready(function() {\n//     $.ajax({\n//         url: \"http://rest-service.guides.spring.io/greeting\"\n//     }).then(function(data) {\n//        $('.greeting-id').append(data.id);\n//        $('.greeting-content').append(data.content);\n//     });\n\n// });\n\n// $(document).ready(function(){\n\n//    $('#term').focus(function(){\n//       var full = $(\"#poster\").has(\"img\").length ? true : false;\n//       if(full == false){\n//          $('#poster').empty();\n//       }\n//    });\n\n//    var getPoster = function(){\n\n//         var film = $('#term').val();\n\n//          if(film == ''){\n\n//             $('#poster').html(\"<h2 class='loading'>Ha! We haven't forgotten to validate the form! Please enter something.</h2>\");\n\n//          } else {\n\n//             $('#poster').html(\"<h2 class='loading'>Your poster is on its way!</h2>\");\n\n//             $.getJSON(\"https://api.themoviedb.org/3/movie/550?api_key=84c35b18ab46bd677eace379309dbadc/\" + film + \"?callback=?\", function(json) {\n//                if (json != \"Nothing found.\"){\n//                      $('#poster').html('<h2 class=\"loading\">Well, gee whiz! We found you a poster, skip!</h2><img id=\"thePoster\" src=' + json[0].posters[0].image.url + ' />');\n//                   } else {\n//                      $.getJSON(\"https://api.themoviedb.org/3/movie/550?api_key=84c35b18ab46bd677eace379309dbadc/goonies?callback=?\", function(json) {\n//                         console.log(json);\n//                         $('#poster').html('<h2 class=\"loading\">We are afraid nothing was found for that search. Perhaps you were looking for The Goonies?</h2><img id=\"thePoster\" src=' + json[0].posters[0].image.url + ' />');\n//                      });\n//                   }\n//              });\n\n//           }\n\n//         return false;\n//    }\n\n//    $('#search').click(getPoster);\n//    $('#term').keyup(function(event){\n//        if(event.keyCode == 13){\n//            getPoster();\n//        }\n//    });\n\n// });",
+			"contents": "Your service request number 8005439776 is in status Completed.<br>\n\nHere are your order details:\n<br>\n\n<table class=srOrderTable>\n\t<tr>\n\t\t<th>Order Number</th>\n\t\t<th>Status</th>\n\t\t<th>Detail</th>\n\t\t<tr>\n\t\t\t<td>7006890255</td>\n\t\t\t<td>Service Parts delivered</td>\n\t\t\t<td>Service Parts is delivered to service center.  Service engineer will contact you to confirm onsite appointment in next business day</td>\n\t\t</tr>\n\t</tr>\n</table>\n<br>\nWhat else can I help you with today?",
 			"settings":
 			{
-				"buffer_size": 3179,
+				"buffer_size": 471,
 				"line_ending": "Unix"
 			}
 		}
@@ -261,9 +262,21 @@
 	"command_palette":
 	{
 		"height": 392.0,
-		"last_filter": "rein",
+		"last_filter": "re",
 		"selected_items":
 		[
+			[
+				"re",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"bea",
+				"HTMLBeautify"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
 			[
 				"rein",
 				"Indentation: Reindent Lines"
@@ -281,15 +294,7 @@
 				"Set Syntax: SCSS"
 			],
 			[
-				"re",
-				"Indentation: Reindent Lines"
-			],
-			[
 				"ht",
-				"Set Syntax: HTML"
-			],
-			[
-				"html",
 				"Set Syntax: HTML"
 			],
 			[
@@ -302,10 +307,6 @@
 			],
 			[
 				"beat",
-				"HTMLBeautify"
-			],
-			[
-				"bea",
 				"HTMLBeautify"
 			],
 			[
@@ -362,10 +363,12 @@
 		"/Users/ShazMac/Documents/Coding Space/Watson/assets/css",
 		"/Users/ShazMac/Documents/Coding Space/Watson/assets/css/components",
 		"/Users/ShazMac/Documents/Coding Space/Watson/assets/css/core",
-		"/Users/ShazMac/Documents/Coding Space/Watson/assets/css/core/constants"
+		"/Users/ShazMac/Documents/Coding Space/Watson/assets/css/core/constants",
+		"/Users/ShazMac/Documents/Coding Space/Watson/assets/img"
 	],
 	"file_history":
 	[
+		"/Users/ShazMac/Documents/Coding Space/api_tryouts.js",
 		"/Users/ShazMac/Documents/Coding Space/Watson/Build/popup.html",
 		"/Users/ShazMac/Documents/Coding Space/Watson/Build/assets/css/popup.css",
 		"/Users/ShazMac/Documents/Coding Space/Watson/assets/js/api.js",
@@ -428,7 +431,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -440,9 +443,13 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			"serialNumber",
+			"servTrigger",
+			"dataInit",
+			"box-shadow",
 			"font-size-base",
 			"btn",
 			"border-radius",
@@ -494,6 +501,7 @@
 						],
 						"settings":
 						{
+							"history_list_is_closing": true,
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
@@ -502,7 +510,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
@@ -524,13 +532,14 @@
 						],
 						"settings":
 						{
+							"history_list_is_closing": true,
 							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 18,
 					"type": "text"
 				},
 				{
@@ -546,8 +555,8 @@
 						"selection":
 						[
 							[
-								202,
-								202
+								175,
+								175
 							]
 						],
 						"settings":
@@ -558,7 +567,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -574,8 +583,8 @@
 						"selection":
 						[
 							[
-								149,
-								149
+								236,
+								236
 							]
 						],
 						"settings":
@@ -588,7 +597,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -616,7 +625,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 18,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -646,7 +655,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -662,8 +671,8 @@
 						"selection":
 						[
 							[
-								451,
-								451
+								493,
+								493
 							]
 						],
 						"settings":
@@ -675,7 +684,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -684,15 +693,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1134,
+						"buffer_size": 1271,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								710,
-								710
+								956,
+								956
 							]
 						],
 						"settings":
@@ -701,10 +710,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 208.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
@@ -734,13 +743,13 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 17,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 4,
+			"selected": 5,
 			"sheets":
 			[
 				{
@@ -768,7 +777,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
@@ -796,7 +805,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
@@ -824,7 +833,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
@@ -852,7 +861,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
@@ -861,15 +870,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1488,
+						"buffer_size": 1607,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1334,
-								1334
+								204,
+								204
 							]
 						],
 						"settings":
@@ -878,10 +887,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 271.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -890,15 +899,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7162,
+						"buffer_size": 7036,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6471,
-								6486
+								6288,
+								6288
 							]
 						],
 						"settings":
@@ -908,10 +917,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 4052.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -941,7 +950,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
@@ -957,8 +966,8 @@
 						"selection":
 						[
 							[
-								536,
-								536
+								12,
+								12
 							]
 						],
 						"settings":
@@ -971,7 +980,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 12,
 					"type": "text"
 				}
 			]
@@ -986,21 +995,49 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7883,
+						"buffer_size": 8703,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5057,
-								5057
+								1973,
+								1973
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2004.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 805,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								801,
+								643
+							]
+						],
+						"settings":
+						{
+							"auto_name": "section.chat-header .logo {",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1010,63 +1047,30 @@
 					"type": "text"
 				},
 				{
-					"buffer": 18,
+					"buffer": 19,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7861,
+						"buffer_size": 471,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								655,
-								655
+								201,
+								201
 							]
 						],
 						"settings":
 						{
-							"auto_indent": false,
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
-							"tab_width": 2,
-							"translate_tabs_to_spaces": true,
-							"word_wrap": true
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 19,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3179,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3179,
-								3179
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 818.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 19,
+					"stack_index": 8,
 					"type": "text"
 				}
 			]
@@ -1106,13 +1110,13 @@
 		"cols":
 		[
 			0.0,
-			0.541839762612,
+			0.504868638885,
 			1.0
 		],
 		"rows":
 		[
 			0.0,
-			0.532784845133,
+			0.167769901881,
 			1.0
 		]
 	},
