@@ -66,8 +66,30 @@
 
 		<div class="user-bar">
 			<ul>
-			<a href="#"><li class="user-profile"><span class="va-person" aria-hidden="true"></span></li></a>
-				<a href="#"><li class="user-settings"><span class="va-cog" aria-hidden="true"></span></li></a>
+				<a href="#">
+					<li class="user-profile menu-item">
+						<span class="va-person" aria-hidden="true"></span>
+						<div class="menu-content" style="display: none;">
+							<ul>
+								<li><a href="#">LINK ONE</a></li>
+								<li><a href="#">LINK TWO</a></li>
+							</ul>
+						</div>
+					</li>
+				</a>
+
+				<a href="#">
+					<li class="user-settings menu-item">
+						<span class="va-cog" aria-hidden="true"></span>
+						<div class="menu-content" style="display: none;">
+							<ul>
+								<li><a href="#">LINK ONE</a></li>
+								<li><a href="#">LINK TWO</a></li>
+							</ul>
+						</div>
+					</li>
+				</a>
+
 			</ul>
 		</div>
 	</div>
@@ -81,34 +103,6 @@
 		<div class="conversation-start">
 			<span class="timestamp">Today, 5:38 PM</span>
 		</div>
-
-<!-- 		<div class="bubble you">
-			Hello, this is a watson api test... ask me something
-
-			<br>
-			Enter a serial number:
-
-			<va:textbox
-			name="SerialNumber"
-			servicetrigger="Warranty"
-			prompt="Enter Serial Number"
-			maxlength="8">
-			</va:textbox>
-		</div>
-
-		<div class="bubble you">
-			Question with answers:
-
-			<va:input>Yes</va:input>
-			<va:input>No</va:input>
-		</div>
-
-		<div class="bubble you">
-			Please refer to this Knowledge Base article:
-			<va:link href=http://support.lenovo.com/us/en/find-product-name>How to Find my Serial Number</va:link>
-		</div> -->
-
-		
 	</div>
 </div>
 

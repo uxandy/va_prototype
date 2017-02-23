@@ -20,6 +20,8 @@
 
 		$(".timestamp").html("Today, " + d.toLocaleTimeString());
 
+		$("#chatbox").focus();
+
 		// For now, capture on the click of a button, need to add ENTER key listener.
 		$("#search").click(function() {
 			// Grab what's in the text input box and store it as the value of text in an object
@@ -146,6 +148,8 @@
 		// Parse input boxes
 		$("va\\:textbox").each(function(){
 		        $(this).replaceWith('<div class="input-field"><input id="' + $(this).attr("name") + '"placeholder="' + $(this).attr("prompt") + '"' + 'maxlength=' + $(this).attr("maxlength") + '></div>');
+		        
+
 		        triggerValue = $(this).attr("servicetrigger");
 		        servTrigger = {ServiceTrigger: $(this).attr("servicetrigger")};
 		        console.log('Service trigger captured:' + JSON.stringify(servTrigger));
@@ -169,6 +173,11 @@
 		    }
 		);
 
+		$("va\\:button").each(function(){
+		        $(this).replaceWith('<a href="javascript:void(0);" class="submit-button">' + $(this).html() + '</a>');
+		    }
+		);
+
 		$(".w4mvsImg").each(function(){
 				var src = $('.w4mvsImg').attr('src');
 				$(this).removeClass('w4mvsImg');
@@ -177,12 +186,19 @@
 		);
 
 		$(".bubble ul").each(function() {
-			if (!$(this).hasClass('control-box')){
-				$(this).addClass('control-box');
+			if ($(this).hasClass('control-box') || $(this).hasClass('multi-field')){
+				// DO NOTHING
 				// $('.control-box').wrap('<div class="input-controls"></div>');
+				console.log('found a multi-field class.');
+			} else {
+				$(this).addClass('control-box');
 			}
 		});
 
+		$("ul.multi-field").each(function(){
+		        
+		    }
+		);
 
 		$('.commande').click(function() {
 			// var v = $(this).html();
@@ -202,6 +218,15 @@
 			$(".chat").append('<div class="bubble me">' + x + '</div>');
 			$('.chat').scrollTop($('.chat')[0].scrollHeight);
 			$(postVA(vo));
+		});
+
+		$('.submit-button').click(function() {
+			var snValue = $("#SerialNumber").val();
+			serialValue = snValue;
+			var tcValue = $("#TicketNumber").val();
+			ticketValue = tcValue;
+
+			postArgVA("","");
 		});
 
 		$("#SerialNumber").keypress(function(e) {
