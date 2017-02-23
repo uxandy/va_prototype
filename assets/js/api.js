@@ -230,9 +230,11 @@
 		});
 
 		$("#SerialNumber").keypress(function(e) {
-		    if(e.which == 13) {
+		    if(e.which == 13 && !$(this).hasClass('triggered')) {
 				// Grab what's in the text input box and store it as the value of text in an object
 				var snValue = $("#SerialNumber").val();
+				$(this).addClass('triggered');
+				$(this).removeAttr('id');
 				serialValue = snValue;
 				// var userInput = {text: $("#term").val()};
 				var snData = {SerialNumber: snValue};
@@ -243,9 +245,11 @@
 		});
 
 		$("#TicketNumber").keypress(function(e) {
-		    if(e.which == 13) {
+		    if(e.which == 13 && !$(this).hasClass('triggered')) {
 				// Grab what's in the text input box and store it as the value of text in an object
 				var tcValue = $("#TicketNumber").val();
+				$(this).addClass('triggered');
+				$(this).removeAttr('id');
 				ticketValue = tcValue;
 				// var snData = {SerialNumber: tcValue};
 
