@@ -23,13 +23,20 @@
 		$("#chatbox").focus();
 
 		// For now, capture on the click of a button, need to add ENTER key listener.
-		$("#search").click(function() {
-			// Grab what's in the text input box and store it as the value of text in an object
-			var userInput = {text: $("#term").val()};
-			var chatInput = {text: $("#chatbox").val()};
-			// Pass it on to the PostVA method to get a response
-			postVA(chatInput);
+		$(".send").click(function() {
+				// Grab what's in the text input box and store it as the value of text in an object
+				var chatText = $("#chatbox").val();
+				// var userInput = {text: $("#term").val()};
+				var chatInput = {text: $("#chatbox").val()};
+				// Append input text to chat box.
+				$(".chat").append('<div class="bubble me">' + chatText + '</div>');
+				// Pass it on to the PostVA method to get a response
+				postVA(chatInput);
+				$('.chat').scrollTop($('.chat')[0].scrollHeight);
+				// Clear the text field.
+				$("#chatbox").val("");
 		});
+
 
 		// Need to find a way to merge both functions
 		$("#chatbox").keypress(function(e) {
