@@ -64,6 +64,8 @@
 		console.log("Created following object array from input:");
 		console.log(watsonInput);
 
+		$('.expired').remove();
+
 		$.ajax({
 		  type: "POST",
 		  url: apiURL,
@@ -112,6 +114,8 @@
 		console.log('Passing Serial and Trigger context:');
 		console.log(watsonInput);
 
+		$('.expired').remove();
+
 		$.ajax({
 		  type: "POST",
 		  url: apiURL,
@@ -143,6 +147,13 @@
 
 	}
 
+	function clickAndDisable(link) {
+	    link.onclick = function(event) {
+
+	        event.preventDefault();
+	    }
+	}
+
 	function parseVA() {
 
 		// Parse input boxes
@@ -161,9 +172,14 @@
 		        $(this).replaceWith('<a href="#" class="comm-hook">' + $(this).html() + '</a>');
 		        if ($(this).attr("type")== "survey") {
 		        	$(".comm-hook").addClass('survey-commande');
+		        	$(this).removeClass('comm-hook');
 		        } else {
 		        	$('.comm-hook').parent('li').addClass('commande');
+		        	$(this).removeClass('comm-hook');
+		        	console.log('appending commande here ' + $(this).html());
 		        }
+
+		        
 		    }
 		);
 
@@ -200,15 +216,32 @@
 		    }
 		);
 
-		$('.commande').click(function() {
-			// var v = $(this).html();
+		// $('.control-box').on('click', '.commande', function(e){
+		// 	var x = $("a", this).text();
+		// 	console.log('Command is :' + x);
+		// 	var vo = {text: x};
+		// 	$(".chat").append('<div class="bubble me">' + x + '</div>');
+		// 	$('.chat').scrollTop($('.chat')[0].scrollHeight);
+		// 	$('.commande').addClass('expired');
+		// 	e.preventDefault();
+
+		// 	$(postVA(vo));
+		// });
+
+		$('.commande').click(function(event) {
 			var x = $("a", this).text();
 			console.log('Command is :' + x);
 			var vo = {text: x};
 			$(".chat").append('<div class="bubble me">' + x + '</div>');
 			$('.chat').scrollTop($('.chat')[0].scrollHeight);
+			$('li.commande').addClass('expired');
+			$('.expired').removeClass('commande');
+			$(this).unbind('click');
+			event.preventDefault();
 			$(postVA(vo));
 		});
+
+
 
 		$('.survey-commande').click(function() {
 			// var v = $(this).html();
@@ -225,6 +258,7 @@
 			serialValue = snValue;
 			var tcValue = $("#TicketNumber").val();
 			ticketValue = tcValue;
+			$(this).addClass('expired');
 
 			postArgVA("","");
 		});
@@ -235,6 +269,7 @@
 				var snValue = $("#SerialNumber").val();
 				$(this).addClass('triggered');
 				$(this).removeAttr('id');
+				$('li.commande').addClass('expired');
 				serialValue = snValue;
 				// var userInput = {text: $("#term").val()};
 				var snData = {SerialNumber: snValue};
@@ -250,6 +285,7 @@
 				var tcValue = $("#TicketNumber").val();
 				$(this).addClass('triggered');
 				$(this).removeAttr('id');
+				$('li.commande').addClass('expired');
 				ticketValue = tcValue;
 				// var snData = {SerialNumber: tcValue};
 
