@@ -257,6 +257,7 @@
 			var vo = {text: x};
 			$(".chat").append('<div class="bubble me">' + x + '</div>');
 			$('.chat').scrollTop($('.chat')[0].scrollHeight);
+			$('a.survey-commande').addClass('expired');
 			$(postVA(vo));
 		});
 
