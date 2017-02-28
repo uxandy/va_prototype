@@ -400,6 +400,9 @@ html {
   html body {
     font-family: Lato-400; }
 
+body {
+  min-width: 350px; }
+
 .conversation-start {
   position: relative;
   width: 100%;
@@ -413,7 +416,7 @@ html {
       position: absolute;
       top: 10px;
       display: inline-block;
-      width: 30%;
+      width: 20%;
       height: 1px;
       content: '';
       background-color: #555; }
@@ -588,7 +591,7 @@ html {
       margin-right: 40px;
       background: none;
       width: 100%;
-      padding-right: 90px;
+      padding-right: 50px;
       display: inline-block;
       box-sizing: border-box; }
     .chat-input .write .chat-action-container {
@@ -619,6 +622,13 @@ html {
   margin-bottom: 10px; }
   .submit-button:hover {
     background: #fafafa; }
+
+.rightside-title {
+  position: relative;
+  top: 16px;
+  right: 15px;
+  font-size: 20px;
+  color: #6f7170; }
 
 .loading {
   font-size: 38px; }
@@ -725,7 +735,8 @@ section.chat-header {
     left: 0;
     position: relative;
     text-align: center;
-    width: 100%; }
+    width: 100%;
+    min-width: 350px; }
     section.chat-header .logo span.va-lenovo {
       color: #6f7170;
       font-size: 22px;
