@@ -4,7 +4,8 @@
 
 	$(parseVA);
 
-	var apiURL = "https://lenovo-vap.mybluemix.net/conversation/api/v1/workspaces/8f48f0ef-38c2-4fea-b435-99356a9fd25c/message";
+	//var apiURL = "https://lenovo-vap.mybluemix.net/conversation/api/v1/workspaces/8f48f0ef-38c2-4fea-b435-99356a9fd25c/message";
+	var apiURL = "https://lenovo-vap-test.mybluemix.net/conversation/api/v1/workspaces/78393a1e-2610-45a8-8ed2-9dd777925979/message";
 	var contextVA = {};
 	var resultVA = null;
 	var servTrigger = {};
