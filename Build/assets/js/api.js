@@ -68,7 +68,7 @@
 		console.log("Input given was: " + x);
 		watsonInput["input"] = x;
 		watsonInput["context"] = contextVA;
-		watsonInput["alternate_intents"] = "true";
+		watsonInput["alternate_intents"] = true;
 		
 
 		console.log("Created following object array from input:");
